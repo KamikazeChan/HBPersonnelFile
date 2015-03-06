@@ -1,6 +1,6 @@
 ﻿namespace HBPersonnelFile
 {
-    partial class MainForm
+    partial class FrmMain
     {
         /// <summary>
         /// 必需的设计器变量。

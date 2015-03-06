@@ -10,14 +10,14 @@ using WeifenLuo.WinFormsUI.Docking;
 
 namespace HBPersonnelFile
 {
-    public partial class MainForm : Form
+    public partial class FrmMain : Form
     {
         public static Form sMainForm;
         private FrmMainToolBox FrmToolBox;
         public static JXCClient.JXCServiceClient jxcClient;
         public static DockPanel sDPanel;
 
-        public MainForm()
+        public FrmMain()
         {
             InitializeComponent();
             InitSystem();//初始化系统

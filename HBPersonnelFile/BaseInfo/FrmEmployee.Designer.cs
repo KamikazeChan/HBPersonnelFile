@@ -42,19 +42,6 @@
             this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
-            this.labelX5 = new DevComponents.DotNetBar.LabelX();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
-            this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.panelRight = new DevComponents.DotNetBar.PanelEx();
-            this.btnDel = new DevComponents.DotNetBar.ButtonX();
-            this.btnEdit = new DevComponents.DotNetBar.ButtonX();
-            this.btnAdd = new DevComponents.DotNetBar.ButtonX();
-            this.btnPrint = new DevComponents.DotNetBar.ButtonX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
@@ -65,6 +52,31 @@
             this.textBoxX9 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.textBoxX10 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.textBoxX11 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
+            this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.panelRight = new DevComponents.DotNetBar.PanelEx();
+            this.btnPrint = new DevComponents.DotNetBar.ButtonX();
+            this.btnAdd = new DevComponents.DotNetBar.ButtonX();
+            this.btnEdit = new DevComponents.DotNetBar.ButtonX();
+            this.btnDel = new DevComponents.DotNetBar.ButtonX();
+            this.labelX11 = new DevComponents.DotNetBar.LabelX();
+            this.labelX12 = new DevComponents.DotNetBar.LabelX();
+            this.labelX13 = new DevComponents.DotNetBar.LabelX();
+            this.textBoxX12 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.textBoxX13 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.textBoxX14 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX14 = new DevComponents.DotNetBar.LabelX();
+            this.labelX15 = new DevComponents.DotNetBar.LabelX();
+            this.labelX16 = new DevComponents.DotNetBar.LabelX();
+            this.textBoxX15 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.textBoxX16 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.textBoxX17 = new DevComponents.DotNetBar.Controls.TextBoxX();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
@@ -75,6 +87,8 @@
             // 
             // dgv
             // 
+            this.dgv.AllowUserToAddRows = false;
+            this.dgv.AllowUserToDeleteRows = false;
             this.dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -90,6 +104,7 @@
             this.dgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv.Location = new System.Drawing.Point(0, 35);
             this.dgv.Name = "dgv";
+            this.dgv.ReadOnly = true;
             this.dgv.RowTemplate.Height = 23;
             this.dgv.Size = new System.Drawing.Size(425, 560);
             this.dgv.TabIndex = 0;
@@ -225,6 +240,18 @@
             // 
             // tabControlPanel1
             // 
+            this.tabControlPanel1.Controls.Add(this.labelX11);
+            this.tabControlPanel1.Controls.Add(this.labelX12);
+            this.tabControlPanel1.Controls.Add(this.labelX13);
+            this.tabControlPanel1.Controls.Add(this.textBoxX12);
+            this.tabControlPanel1.Controls.Add(this.textBoxX13);
+            this.tabControlPanel1.Controls.Add(this.textBoxX14);
+            this.tabControlPanel1.Controls.Add(this.labelX14);
+            this.tabControlPanel1.Controls.Add(this.labelX15);
+            this.tabControlPanel1.Controls.Add(this.labelX16);
+            this.tabControlPanel1.Controls.Add(this.textBoxX15);
+            this.tabControlPanel1.Controls.Add(this.textBoxX16);
+            this.tabControlPanel1.Controls.Add(this.textBoxX17);
             this.tabControlPanel1.Controls.Add(this.labelX6);
             this.tabControlPanel1.Controls.Add(this.labelX7);
             this.tabControlPanel1.Controls.Add(this.labelX8);
@@ -260,6 +287,106 @@
             this.tabControlPanel1.TabIndex = 1;
             this.tabControlPanel1.TabItem = this.tabItem1;
             // 
+            // labelX6
+            // 
+            this.labelX6.BackColor = System.Drawing.Color.Transparent;
+            this.labelX6.Location = new System.Drawing.Point(179, 100);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(54, 23);
+            this.labelX6.TabIndex = 25;
+            this.labelX6.Text = "部门";
+            // 
+            // labelX7
+            // 
+            this.labelX7.BackColor = System.Drawing.Color.Transparent;
+            this.labelX7.Location = new System.Drawing.Point(179, 73);
+            this.labelX7.Name = "labelX7";
+            this.labelX7.Size = new System.Drawing.Size(54, 23);
+            this.labelX7.TabIndex = 24;
+            this.labelX7.Text = "员工类型";
+            // 
+            // labelX8
+            // 
+            this.labelX8.BackColor = System.Drawing.Color.Transparent;
+            this.labelX8.Location = new System.Drawing.Point(179, 127);
+            this.labelX8.Name = "labelX8";
+            this.labelX8.Size = new System.Drawing.Size(54, 23);
+            this.labelX8.TabIndex = 23;
+            this.labelX8.Text = "状态";
+            // 
+            // labelX9
+            // 
+            this.labelX9.BackColor = System.Drawing.Color.Transparent;
+            this.labelX9.Location = new System.Drawing.Point(179, 46);
+            this.labelX9.Name = "labelX9";
+            this.labelX9.Size = new System.Drawing.Size(54, 23);
+            this.labelX9.TabIndex = 22;
+            this.labelX9.Text = "离职日期";
+            // 
+            // labelX10
+            // 
+            this.labelX10.BackColor = System.Drawing.Color.Transparent;
+            this.labelX10.Location = new System.Drawing.Point(179, 19);
+            this.labelX10.Name = "labelX10";
+            this.labelX10.Size = new System.Drawing.Size(54, 23);
+            this.labelX10.TabIndex = 21;
+            this.labelX10.Text = "入职日期";
+            // 
+            // textBoxX2
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX2.Border.Class = "TextBoxBorder";
+            this.textBoxX2.Location = new System.Drawing.Point(239, 104);
+            this.textBoxX2.Name = "textBoxX2";
+            this.textBoxX2.Size = new System.Drawing.Size(84, 21);
+            this.textBoxX2.TabIndex = 20;
+            // 
+            // textBoxX3
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX3.Border.Class = "TextBoxBorder";
+            this.textBoxX3.Location = new System.Drawing.Point(239, 23);
+            this.textBoxX3.Name = "textBoxX3";
+            this.textBoxX3.Size = new System.Drawing.Size(84, 21);
+            this.textBoxX3.TabIndex = 19;
+            // 
+            // textBoxX9
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX9.Border.Class = "TextBoxBorder";
+            this.textBoxX9.Location = new System.Drawing.Point(239, 50);
+            this.textBoxX9.Name = "textBoxX9";
+            this.textBoxX9.Size = new System.Drawing.Size(84, 21);
+            this.textBoxX9.TabIndex = 16;
+            // 
+            // textBoxX10
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX10.Border.Class = "TextBoxBorder";
+            this.textBoxX10.Location = new System.Drawing.Point(239, 77);
+            this.textBoxX10.Name = "textBoxX10";
+            this.textBoxX10.Size = new System.Drawing.Size(84, 21);
+            this.textBoxX10.TabIndex = 18;
+            // 
+            // textBoxX11
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX11.Border.Class = "TextBoxBorder";
+            this.textBoxX11.Location = new System.Drawing.Point(239, 131);
+            this.textBoxX11.Name = "textBoxX11";
+            this.textBoxX11.Size = new System.Drawing.Size(84, 21);
+            this.textBoxX11.TabIndex = 17;
+            // 
             // labelX5
             // 
             this.labelX5.BackColor = System.Drawing.Color.Transparent;
@@ -267,7 +394,7 @@
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(54, 23);
             this.labelX5.TabIndex = 15;
-            this.labelX5.Text = "labelX5";
+            this.labelX5.Text = "出生月份";
             // 
             // labelX4
             // 
@@ -276,7 +403,7 @@
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(54, 23);
             this.labelX4.TabIndex = 14;
-            this.labelX4.Text = "labelX4";
+            this.labelX4.Text = "出生年份";
             // 
             // labelX3
             // 
@@ -285,7 +412,7 @@
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(54, 23);
             this.labelX3.TabIndex = 13;
-            this.labelX3.Text = "labelX3";
+            this.labelX3.Text = "电话";
             // 
             // labelX2
             // 
@@ -294,7 +421,7 @@
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(54, 23);
             this.labelX2.TabIndex = 12;
-            this.labelX2.Text = "labelX2";
+            this.labelX2.Text = "性别";
             // 
             // labelX1
             // 
@@ -303,7 +430,7 @@
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(54, 23);
             this.labelX1.TabIndex = 11;
-            this.labelX1.Text = "labelX1";
+            this.labelX1.Text = "姓名";
             // 
             // tabItem1
             // 
@@ -355,25 +482,15 @@
             this.panelRight.Style.GradientAngle = 90;
             this.panelRight.TabIndex = 5;
             // 
-            // btnDel
+            // btnPrint
             // 
-            this.btnDel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnDel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnDel.Location = new System.Drawing.Point(441, 10);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 23);
-            this.btnDel.TabIndex = 5;
-            this.btnDel.Text = "删除";
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnEdit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnEdit.Location = new System.Drawing.Point(360, 10);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 16;
-            this.btnEdit.Text = "修改";
+            this.btnPrint.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnPrint.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnPrint.Location = new System.Drawing.Point(15, 10);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(75, 23);
+            this.btnPrint.TabIndex = 17;
+            this.btnPrint.Text = "打印";
             // 
             // btnAdd
             // 
@@ -385,115 +502,145 @@
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "新增";
             // 
-            // btnPrint
+            // btnEdit
             // 
-            this.btnPrint.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnPrint.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnPrint.Location = new System.Drawing.Point(15, 10);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(75, 23);
-            this.btnPrint.TabIndex = 17;
-            this.btnPrint.Text = "打印";
+            this.btnEdit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnEdit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnEdit.Location = new System.Drawing.Point(360, 10);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 16;
+            this.btnEdit.Text = "修改";
             // 
-            // labelX6
+            // btnDel
             // 
-            this.labelX6.BackColor = System.Drawing.Color.Transparent;
-            this.labelX6.Location = new System.Drawing.Point(15, 235);
-            this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(54, 23);
-            this.labelX6.TabIndex = 25;
-            this.labelX6.Text = "labelX6";
+            this.btnDel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnDel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnDel.Location = new System.Drawing.Point(441, 10);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(75, 23);
+            this.btnDel.TabIndex = 5;
+            this.btnDel.Text = "删除";
             // 
-            // labelX7
+            // labelX11
             // 
-            this.labelX7.BackColor = System.Drawing.Color.Transparent;
-            this.labelX7.Location = new System.Drawing.Point(15, 208);
-            this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(54, 23);
-            this.labelX7.TabIndex = 24;
-            this.labelX7.Text = "labelX7";
+            this.labelX11.BackColor = System.Drawing.Color.Transparent;
+            this.labelX11.Location = new System.Drawing.Point(179, 225);
+            this.labelX11.Name = "labelX11";
+            this.labelX11.Size = new System.Drawing.Size(54, 23);
+            this.labelX11.TabIndex = 37;
+            this.labelX11.Text = "年假";
             // 
-            // labelX8
+            // labelX12
             // 
-            this.labelX8.BackColor = System.Drawing.Color.Transparent;
-            this.labelX8.Location = new System.Drawing.Point(15, 262);
-            this.labelX8.Name = "labelX8";
-            this.labelX8.Size = new System.Drawing.Size(54, 23);
-            this.labelX8.TabIndex = 23;
-            this.labelX8.Text = "labelX8";
+            this.labelX12.BackColor = System.Drawing.Color.Transparent;
+            this.labelX12.Location = new System.Drawing.Point(179, 198);
+            this.labelX12.Name = "labelX12";
+            this.labelX12.Size = new System.Drawing.Size(54, 23);
+            this.labelX12.TabIndex = 36;
+            this.labelX12.Text = "特困基金";
             // 
-            // labelX9
+            // labelX13
             // 
-            this.labelX9.BackColor = System.Drawing.Color.Transparent;
-            this.labelX9.Location = new System.Drawing.Point(15, 181);
-            this.labelX9.Name = "labelX9";
-            this.labelX9.Size = new System.Drawing.Size(54, 23);
-            this.labelX9.TabIndex = 22;
-            this.labelX9.Text = "labelX9";
+            this.labelX13.BackColor = System.Drawing.Color.Transparent;
+            this.labelX13.Location = new System.Drawing.Point(179, 252);
+            this.labelX13.Name = "labelX13";
+            this.labelX13.Size = new System.Drawing.Size(54, 23);
+            this.labelX13.TabIndex = 35;
+            this.labelX13.Text = "剩余年假";
             // 
-            // labelX10
-            // 
-            this.labelX10.BackColor = System.Drawing.Color.Transparent;
-            this.labelX10.Location = new System.Drawing.Point(15, 154);
-            this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(54, 23);
-            this.labelX10.TabIndex = 21;
-            this.labelX10.Text = "labelX10";
-            // 
-            // textBoxX2
+            // textBoxX12
             // 
             // 
             // 
             // 
-            this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Location = new System.Drawing.Point(75, 239);
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX2.TabIndex = 20;
+            this.textBoxX12.Border.Class = "TextBoxBorder";
+            this.textBoxX12.Location = new System.Drawing.Point(239, 229);
+            this.textBoxX12.Name = "textBoxX12";
+            this.textBoxX12.Size = new System.Drawing.Size(84, 21);
+            this.textBoxX12.TabIndex = 34;
             // 
-            // textBoxX3
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX3.Border.Class = "TextBoxBorder";
-            this.textBoxX3.Location = new System.Drawing.Point(75, 158);
-            this.textBoxX3.Name = "textBoxX3";
-            this.textBoxX3.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX3.TabIndex = 19;
-            // 
-            // textBoxX9
+            // textBoxX13
             // 
             // 
             // 
             // 
-            this.textBoxX9.Border.Class = "TextBoxBorder";
-            this.textBoxX9.Location = new System.Drawing.Point(75, 185);
-            this.textBoxX9.Name = "textBoxX9";
-            this.textBoxX9.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX9.TabIndex = 16;
+            this.textBoxX13.Border.Class = "TextBoxBorder";
+            this.textBoxX13.Location = new System.Drawing.Point(239, 202);
+            this.textBoxX13.Name = "textBoxX13";
+            this.textBoxX13.Size = new System.Drawing.Size(84, 21);
+            this.textBoxX13.TabIndex = 33;
             // 
-            // textBoxX10
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX10.Border.Class = "TextBoxBorder";
-            this.textBoxX10.Location = new System.Drawing.Point(75, 212);
-            this.textBoxX10.Name = "textBoxX10";
-            this.textBoxX10.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX10.TabIndex = 18;
-            // 
-            // textBoxX11
+            // textBoxX14
             // 
             // 
             // 
             // 
-            this.textBoxX11.Border.Class = "TextBoxBorder";
-            this.textBoxX11.Location = new System.Drawing.Point(75, 266);
-            this.textBoxX11.Name = "textBoxX11";
-            this.textBoxX11.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX11.TabIndex = 17;
+            this.textBoxX14.Border.Class = "TextBoxBorder";
+            this.textBoxX14.Location = new System.Drawing.Point(239, 256);
+            this.textBoxX14.Name = "textBoxX14";
+            this.textBoxX14.Size = new System.Drawing.Size(84, 21);
+            this.textBoxX14.TabIndex = 32;
+            // 
+            // labelX14
+            // 
+            this.labelX14.BackColor = System.Drawing.Color.Transparent;
+            this.labelX14.Location = new System.Drawing.Point(15, 225);
+            this.labelX14.Name = "labelX14";
+            this.labelX14.Size = new System.Drawing.Size(54, 23);
+            this.labelX14.TabIndex = 31;
+            this.labelX14.Text = "公积金";
+            // 
+            // labelX15
+            // 
+            this.labelX15.BackColor = System.Drawing.Color.Transparent;
+            this.labelX15.Location = new System.Drawing.Point(15, 198);
+            this.labelX15.Name = "labelX15";
+            this.labelX15.Size = new System.Drawing.Size(54, 23);
+            this.labelX15.TabIndex = 30;
+            this.labelX15.Text = "社保";
+            // 
+            // labelX16
+            // 
+            this.labelX16.BackColor = System.Drawing.Color.Transparent;
+            this.labelX16.Location = new System.Drawing.Point(15, 252);
+            this.labelX16.Name = "labelX16";
+            this.labelX16.Size = new System.Drawing.Size(54, 23);
+            this.labelX16.TabIndex = 29;
+            this.labelX16.Text = "工会费";
+            // 
+            // textBoxX15
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX15.Border.Class = "TextBoxBorder";
+            this.textBoxX15.Location = new System.Drawing.Point(75, 229);
+            this.textBoxX15.Name = "textBoxX15";
+            this.textBoxX15.Size = new System.Drawing.Size(84, 21);
+            this.textBoxX15.TabIndex = 28;
+            // 
+            // textBoxX16
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX16.Border.Class = "TextBoxBorder";
+            this.textBoxX16.Location = new System.Drawing.Point(75, 202);
+            this.textBoxX16.Name = "textBoxX16";
+            this.textBoxX16.Size = new System.Drawing.Size(84, 21);
+            this.textBoxX16.TabIndex = 27;
+            // 
+            // textBoxX17
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX17.Border.Class = "TextBoxBorder";
+            this.textBoxX17.Location = new System.Drawing.Point(75, 256);
+            this.textBoxX17.Name = "textBoxX17";
+            this.textBoxX17.Size = new System.Drawing.Size(84, 21);
+            this.textBoxX17.TabIndex = 26;
             // 
             // FrmEmployee
             // 
@@ -506,6 +653,7 @@
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Name = "FrmEmployee";
             this.Text = "人事资料";
+            this.Load += new System.EventHandler(this.FrmEmployee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.panelTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).EndInit();
@@ -553,6 +701,18 @@
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX10;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX11;
         private DevComponents.DotNetBar.ButtonX btnPrint;
+        private DevComponents.DotNetBar.LabelX labelX11;
+        private DevComponents.DotNetBar.LabelX labelX12;
+        private DevComponents.DotNetBar.LabelX labelX13;
+        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX12;
+        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX13;
+        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX14;
+        private DevComponents.DotNetBar.LabelX labelX14;
+        private DevComponents.DotNetBar.LabelX labelX15;
+        private DevComponents.DotNetBar.LabelX labelX16;
+        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX15;
+        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX16;
+        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX17;
 
     }
 }
