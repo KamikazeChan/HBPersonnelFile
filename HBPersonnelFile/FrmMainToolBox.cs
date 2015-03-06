@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace HBPersonnelFile
 {
-    public partial class Form1 : Form
+    public partial class FrmMainToolBox : Form
     {
-        public Form1()
+        public FrmMainToolBox()
         {
             InitializeComponent();
         }
