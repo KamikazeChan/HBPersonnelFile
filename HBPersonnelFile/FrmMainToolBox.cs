@@ -6,14 +6,22 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using WeifenLuo.WinFormsUI.Docking;
 
 namespace HBPersonnelFile
 {
-    public partial class FrmMainToolBox : Form
+    public partial class FrmMainToolBox : DockContent
     {
+        Form Mfrm;
+
         public FrmMainToolBox()
         {
             InitializeComponent();
+        }
+
+        public FrmMainToolBox(Form ParentForm): this()
+        {
+            Mfrm = ParentForm;
         }
     }
 }
