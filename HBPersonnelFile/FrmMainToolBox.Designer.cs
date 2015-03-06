@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.Main_TreeView = new System.Windows.Forms.TreeView();
+            this.treeView = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.SuspendLayout();
             // 
-            // Main_TreeView
+            // treeView
             // 
-            this.Main_TreeView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Main_TreeView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Main_TreeView.Location = new System.Drawing.Point(0, 0);
-            this.Main_TreeView.Name = "Main_TreeView";
-            this.Main_TreeView.Size = new System.Drawing.Size(255, 601);
-            this.Main_TreeView.StateImageList = this.imageList1;
-            this.Main_TreeView.TabIndex = 0;
+            this.treeView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.treeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView.Location = new System.Drawing.Point(0, 0);
+            this.treeView.Name = "treeView";
+            this.treeView.Size = new System.Drawing.Size(255, 601);
+            this.treeView.StateImageList = this.imageList1;
+            this.treeView.TabIndex = 0;
             // 
             // imageList1
             // 
@@ -56,7 +56,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(255, 601);
             this.CloseButtonVisible = false;
-            this.Controls.Add(this.Main_TreeView);
+            this.Controls.Add(this.treeView);
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.MinimizeBox = false;
             this.Name = "FrmMainToolBox";
@@ -67,7 +67,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TreeView Main_TreeView;
+        private System.Windows.Forms.TreeView treeView;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }

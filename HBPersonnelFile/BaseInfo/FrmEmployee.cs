@@ -25,7 +25,7 @@ namespace HBPersonnelFile.BaseInfo
         private void FrmEmployee_Load(object sender, EventArgs e)
         {
             string sql = "SELECT * FROM Tyg员工";
-            dgv.DataSource = FrmMain.jxcClient.GetTable(sql,1);
+            //dgv.DataSource = FrmMain.jxcClient.GetTable(sql,1);
         }
     }
 }
