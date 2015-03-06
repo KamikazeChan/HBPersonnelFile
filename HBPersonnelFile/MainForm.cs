@@ -69,5 +69,11 @@ namespace HBPersonnelFile
             FrmToolBox = new FrmMainToolBox(this);
             FrmToolBox.Show(sDPanel, DockState.DockLeft);
         }
+
+        private void 人事资料ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BaseInfo.FrmEmployee frm = new BaseInfo.FrmEmployee();
+            frm.Show(sDPanel);
+        }
     }
 }

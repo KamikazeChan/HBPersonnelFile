@@ -50,6 +50,7 @@
             this.menu_Main = new System.Windows.Forms.MenuStrip();
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dockPanelMain = new WeifenLuo.WinFormsUI.Docking.DockPanel();
+            this.人事资料ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.main_Staus.SuspendLayout();
             this.menu_Main.SuspendLayout();
             this.SuspendLayout();
@@ -96,6 +97,8 @@
             // 
             // testToolStripMenuItem
             // 
+            this.testToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.人事资料ToolStripMenuItem});
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
             this.testToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.testToolStripMenuItem.Text = "Test";
@@ -155,6 +158,13 @@
             this.dockPanelMain.Skin = dockPanelSkin1;
             this.dockPanelMain.TabIndex = 5;
             // 
+            // 人事资料ToolStripMenuItem
+            // 
+            this.人事资料ToolStripMenuItem.Name = "人事资料ToolStripMenuItem";
+            this.人事资料ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.人事资料ToolStripMenuItem.Text = "人事资料";
+            this.人事资料ToolStripMenuItem.Click += new System.EventHandler(this.人事资料ToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -187,6 +197,7 @@
         private System.Windows.Forms.MenuStrip menu_Main;
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
         private WeifenLuo.WinFormsUI.Docking.DockPanel dockPanelMain;
+        private System.Windows.Forms.ToolStripMenuItem 人事资料ToolStripMenuItem;
     }
 }
 
