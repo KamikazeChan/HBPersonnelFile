@@ -166,6 +166,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menu_Main;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "管理系统";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.main_Staus.ResumeLayout(false);
