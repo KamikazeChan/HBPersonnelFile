@@ -12,15 +12,16 @@ namespace HBPersonnelFile
 {
     public partial class FrmMainToolBox : DockContent
     {
-        Form Mfrm;
+        FrmMain Mfrm;
 
         public FrmMainToolBox()
         {
             InitializeComponent();
-          //  BuildTreeMenu();//生成树形菜单
+            BuildTreeMenu();//生成树形菜单
         }
 
-        public FrmMainToolBox(Form ParentForm): this()
+        public FrmMainToolBox(FrmMain ParentForm)
+            : this()
         {
             Mfrm = ParentForm;
         }
@@ -28,45 +29,50 @@ namespace HBPersonnelFile
         private void BuildTreeMenu()
         {
             var sql="select * from Tcd菜单 order by TypeOrder,SOrder";
-            var dt = HBServer.GetTable(sql);
+            var dt = RemoteServer.GetTable(sql);
            
                 var lst =ToEntity(dt);
                 TreeNode parent = null;
-                //foreach (var i in lst)
-                //{
-                //    if (i.FuncName == "")
-                //    {
-                //        TreeNode tmp = new TreeNode(i.NType);
-                //        tmp.Tag = i;
+                foreach (var i in lst)
+                {
+                    if (i.FuncName == "")
+                    {
+                        TreeNode tmp = new TreeNode(i.NType);
+                        tmp.Tag = i;
 
-                //        parent = tmp;
-                //        treeView.Nodes.Add(tmp);
-                //    }
-                //    else
-                //    {
-                //        TreeNode tmp = new TreeNode(i.FuncName);
-                //        tmp.Tag = i;
+                        parent = tmp;
+                        treeView.Nodes.Add(tmp);
+                    }
+                    else
+                    {
+                        TreeNode tmp = new TreeNode(i.FuncName);
+                        tmp.Tag = i;
 
-                //        parent.Nodes.Add(tmp);
-                //    }
-                //}
+                        parent.Nodes.Add(tmp);
+                    }
+                }
 
                 treeView.ExpandAll();
             
         }
 
-        private object ToEntity(DataTable dt)
+        private List<Model.Tcd菜单> ToEntity(DataTable dt)
         {
-            throw new NotImplementedException();
+            Model.Tcd菜单 e = new Model.Tcd菜单();
+            return  e.ConvertToList(dt);
+
         }
 
         private void treeView_DoubleClick(object sender, EventArgs e)
         {
-            //DAL.Tcd菜单 t = (DAL.Tcd菜单)treeView.SelectedNode.Tag;
-            //if (t.FuncName != "")
-            //{
-            //    _ParentForm.OpenMdiChildrenForm2(t);
-            //}
+            Model.Tcd菜单 t = (Model.Tcd菜单)treeView.SelectedNode.Tag;
+            if (t.FuncName != "")
+            {
+                Mfrm.OpenMdiChildrenForm2(t);
+            }
         }
     }
+
+
+
 }

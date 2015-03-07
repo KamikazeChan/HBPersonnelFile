@@ -75,5 +75,60 @@ namespace HBPersonnelFile
             BaseInfo.FrmEmployee frm = new BaseInfo.FrmEmployee();
             frm.Show(sDPanel);
         }
+
+        internal void OpenMdiChildrenForm2(Model.Tcd菜单 t)
+        {
+            if (ChildFromCheck(t.FuncName)) return;
+
+            try
+            {
+                Cursor = Cursors.WaitCursor;
+
+                try
+                {
+                    Type myType = Type.GetType("HBPersonnelFile." + t.FormName);
+
+                    object obj = Activator.CreateInstance(myType);
+                    if (obj is DockContent)
+                    {
+                        DockContent frm = (DockContent)obj;
+                        frm.Show(sDPanel);
+
+                    }
+                    else
+                    {
+                        if (obj is Form)
+                        {
+                            Form f = (Form)obj;
+                            f.ShowInTaskbar = false;
+                            f.ShowDialog();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Cursor = Cursors.Default;
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
+            }
+        }
+
+        private bool ChildFromCheck(string formName)
+        {
+            foreach (Form ChildrenForm in this.MdiChildren)
+            {
+                if (ChildrenForm.Text == formName)//检测是不是当前子窗体名称
+                {
+                    ChildrenForm.Visible = true;    //是的话就是把他显示
+                    ChildrenForm.Activate();   //并激活该窗体
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

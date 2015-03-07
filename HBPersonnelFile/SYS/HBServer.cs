@@ -7,7 +7,7 @@ using System.Text;
 namespace HBPersonnelFile
 {
     //调用远程服务
-    class HBServer
+    class RemoteServer
     {
         /// <summary>
         /// 获取DataTable
@@ -32,11 +32,11 @@ namespace HBPersonnelFile
         /// </summary>
         /// <param name="sql">执行语句</param>
         /// <returns>返回影响行数</returns>
-        private static int ExecSQL(string sql, int uid)
+        public static int ExecSQL(string sql)
         {
             using (JXCClient.JXCServiceClient svc = new JXCClient.JXCServiceClient())
             {
-                int count = svc.ExecSQL(sql, uid);
+                int count = svc.ExecSQL(sql, User.UserID);
                 return count;
             }
         }
@@ -67,7 +67,7 @@ namespace HBPersonnelFile
         /// 获取服务器时间
         /// </summary>
         /// <returns>返回DateTime</returns>
-        private static DateTime GetServerTime(int uid)
+        public static DateTime GetServerTime(int uid)
         {
             using (JXCClient.JXCServiceClient svc = new JXCClient.JXCServiceClient())
             {
