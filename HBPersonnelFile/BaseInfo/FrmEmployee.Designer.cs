@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.panelTop = new DevComponents.DotNetBar.PanelEx();
             this.cbSrh查询 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -40,7 +40,7 @@
             this.textBoxX5 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.textBoxX6 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.tabControl1 = new DevComponents.DotNetBar.TabControl();
+            this.tabControl = new DevComponents.DotNetBar.TabControl();
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
@@ -77,13 +77,10 @@
             this.btnAdd新增 = new DevComponents.DotNetBar.ButtonX();
             this.btnEdit修改 = new DevComponents.DotNetBar.ButtonX();
             this.btnDel删除 = new DevComponents.DotNetBar.ButtonX();
-            this.姓名 = new DevComponents.Editors.ComboItem();
-            this.部门 = new DevComponents.Editors.ComboItem();
-            this.状态 = new DevComponents.Editors.ComboItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.panelTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControl)).BeginInit();
+            this.tabControl.SuspendLayout();
             this.tabControlPanel1.SuspendLayout();
             this.panelRight.SuspendLayout();
             this.SuspendLayout();
@@ -96,21 +93,23 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv.Location = new System.Drawing.Point(0, 35);
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
             this.dgv.RowTemplate.Height = 23;
+            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(425, 560);
             this.dgv.TabIndex = 0;
+            this.dgv.SelectionChanged += new System.EventHandler(this.dgv_SelectionChanged);
             // 
             // panelTop
             // 
@@ -138,10 +137,6 @@
             this.cbSrh查询.DisplayMember = "Text";
             this.cbSrh查询.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbSrh查询.FormattingEnabled = true;
-            this.cbSrh查询.Items.AddRange(new object[] {
-            this.姓名,
-            this.部门,
-            this.状态});
             this.cbSrh查询.Location = new System.Drawing.Point(668, 6);
             this.cbSrh查询.Name = "cbSrh查询";
             this.cbSrh查询.Size = new System.Drawing.Size(80, 22);
@@ -159,6 +154,7 @@
             this.txtSrh查询.Name = "txtSrh查询";
             this.txtSrh查询.Size = new System.Drawing.Size(80, 21);
             this.txtSrh查询.TabIndex = 1;
+            this.txtSrh查询.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSrh查询_KeyPress);
             // 
             // btnSrh查询
             // 
@@ -228,25 +224,25 @@
             this.textBoxX4.Size = new System.Drawing.Size(84, 21);
             this.textBoxX4.TabIndex = 1;
             // 
-            // tabControl1
+            // tabControl
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.BackColor = System.Drawing.Color.Transparent;
-            this.tabControl1.CanReorderTabs = true;
-            this.tabControl1.Controls.Add(this.tabControlPanel1);
-            this.tabControl1.Controls.Add(this.tabControlPanel2);
-            this.tabControl1.Location = new System.Drawing.Point(0, 39);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedTabFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
-            this.tabControl1.SelectedTabIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(528, 521);
-            this.tabControl1.TabIndex = 4;
-            this.tabControl1.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
-            this.tabControl1.Tabs.Add(this.tabItem1);
-            this.tabControl1.Tabs.Add(this.tabItem2);
-            this.tabControl1.Text = "tabControl1";
+            this.tabControl.BackColor = System.Drawing.Color.Transparent;
+            this.tabControl.CanReorderTabs = true;
+            this.tabControl.Controls.Add(this.tabControlPanel1);
+            this.tabControl.Controls.Add(this.tabControlPanel2);
+            this.tabControl.Location = new System.Drawing.Point(0, 39);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedTabFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
+            this.tabControl.SelectedTabIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(528, 521);
+            this.tabControl.TabIndex = 4;
+            this.tabControl.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
+            this.tabControl.Tabs.Add(this.tabItem1);
+            this.tabControl.Tabs.Add(this.tabItem2);
+            this.tabControl.Text = "tabControl1";
             // 
             // tabControlPanel1
             // 
@@ -598,7 +594,7 @@
             this.panelRight.Controls.Add(this.btnAdd新增);
             this.panelRight.Controls.Add(this.btnEdit修改);
             this.panelRight.Controls.Add(this.btnDel删除);
-            this.panelRight.Controls.Add(this.tabControl1);
+            this.panelRight.Controls.Add(this.tabControl);
             this.panelRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelRight.Location = new System.Drawing.Point(425, 35);
             this.panelRight.Name = "panelRight";
@@ -655,18 +651,6 @@
             this.btnDel删除.TabIndex = 5;
             this.btnDel删除.Text = "删除";
             // 
-            // 姓名
-            // 
-            this.姓名.Text = "姓名";
-            // 
-            // 部门
-            // 
-            this.部门.Text = "部门";
-            // 
-            // 状态
-            // 
-            this.状态.Text = "状态";
-            // 
             // FrmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -681,8 +665,8 @@
             this.Load += new System.EventHandler(this.FrmEmployee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.panelTop.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tabControl)).EndInit();
+            this.tabControl.ResumeLayout(false);
             this.tabControlPanel1.ResumeLayout(false);
             this.panelRight.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -698,7 +682,7 @@
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX5;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX6;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX4;
-        private DevComponents.DotNetBar.TabControl tabControl1;
+        private DevComponents.DotNetBar.TabControl tabControl;
         private DevComponents.DotNetBar.TabControlPanel tabControlPanel1;
         private DevComponents.DotNetBar.TabItem tabItem1;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbSrh查询;
@@ -738,9 +722,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX15;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX16;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX17;
-        private DevComponents.Editors.ComboItem 姓名;
-        private DevComponents.Editors.ComboItem 部门;
-        private DevComponents.Editors.ComboItem 状态;
 
     }
 }
