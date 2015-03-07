@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.panelTop = new DevComponents.DotNetBar.PanelEx();
-            this.comboBoxEx1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.btnSearch = new DevComponents.DotNetBar.ButtonX();
+            this.cbSrh查询 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.txtSrh查询 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.btnSrh查询 = new DevComponents.DotNetBar.ButtonX();
             this.textBoxX8 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.textBoxX7 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.textBoxX5 = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -42,6 +42,18 @@
             this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
+            this.labelX11 = new DevComponents.DotNetBar.LabelX();
+            this.labelX12 = new DevComponents.DotNetBar.LabelX();
+            this.labelX13 = new DevComponents.DotNetBar.LabelX();
+            this.textBoxX12 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.textBoxX13 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.textBoxX14 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX14 = new DevComponents.DotNetBar.LabelX();
+            this.labelX15 = new DevComponents.DotNetBar.LabelX();
+            this.labelX16 = new DevComponents.DotNetBar.LabelX();
+            this.textBoxX15 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.textBoxX16 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.textBoxX17 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
@@ -61,22 +73,13 @@
             this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
             this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
             this.panelRight = new DevComponents.DotNetBar.PanelEx();
-            this.btnPrint = new DevComponents.DotNetBar.ButtonX();
-            this.btnAdd = new DevComponents.DotNetBar.ButtonX();
-            this.btnEdit = new DevComponents.DotNetBar.ButtonX();
-            this.btnDel = new DevComponents.DotNetBar.ButtonX();
-            this.labelX11 = new DevComponents.DotNetBar.LabelX();
-            this.labelX12 = new DevComponents.DotNetBar.LabelX();
-            this.labelX13 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX12 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX13 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX14 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX14 = new DevComponents.DotNetBar.LabelX();
-            this.labelX15 = new DevComponents.DotNetBar.LabelX();
-            this.labelX16 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX15 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX16 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX17 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.btnPrt打印 = new DevComponents.DotNetBar.ButtonX();
+            this.btnAdd新增 = new DevComponents.DotNetBar.ButtonX();
+            this.btnEdit修改 = new DevComponents.DotNetBar.ButtonX();
+            this.btnDel删除 = new DevComponents.DotNetBar.ButtonX();
+            this.姓名 = new DevComponents.Editors.ComboItem();
+            this.部门 = new DevComponents.Editors.ComboItem();
+            this.状态 = new DevComponents.Editors.ComboItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
@@ -93,14 +96,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv.Location = new System.Drawing.Point(0, 35);
             this.dgv.Name = "dgv";
@@ -112,9 +115,9 @@
             // panelTop
             // 
             this.panelTop.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelTop.Controls.Add(this.comboBoxEx1);
-            this.panelTop.Controls.Add(this.textBoxX1);
-            this.panelTop.Controls.Add(this.btnSearch);
+            this.panelTop.Controls.Add(this.cbSrh查询);
+            this.panelTop.Controls.Add(this.txtSrh查询);
+            this.panelTop.Controls.Add(this.btnSrh查询);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
@@ -128,42 +131,47 @@
             this.panelTop.Style.GradientAngle = 90;
             this.panelTop.TabIndex = 1;
             // 
-            // comboBoxEx1
+            // cbSrh查询
             // 
-            this.comboBoxEx1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cbSrh查询.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEx1.DisplayMember = "Text";
-            this.comboBoxEx1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxEx1.FormattingEnabled = true;
-            this.comboBoxEx1.Location = new System.Drawing.Point(668, 6);
-            this.comboBoxEx1.Name = "comboBoxEx1";
-            this.comboBoxEx1.Size = new System.Drawing.Size(80, 22);
-            this.comboBoxEx1.TabIndex = 16;
+            this.cbSrh查询.DisplayMember = "Text";
+            this.cbSrh查询.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbSrh查询.FormattingEnabled = true;
+            this.cbSrh查询.Items.AddRange(new object[] {
+            this.姓名,
+            this.部门,
+            this.状态});
+            this.cbSrh查询.Location = new System.Drawing.Point(668, 6);
+            this.cbSrh查询.Name = "cbSrh查询";
+            this.cbSrh查询.Size = new System.Drawing.Size(80, 22);
+            this.cbSrh查询.TabIndex = 16;
             // 
-            // textBoxX1
+            // txtSrh查询
             // 
-            this.textBoxX1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtSrh查询.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Location = new System.Drawing.Point(767, 7);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.Size = new System.Drawing.Size(80, 21);
-            this.textBoxX1.TabIndex = 1;
+            this.txtSrh查询.Border.Class = "TextBoxBorder";
+            this.txtSrh查询.Location = new System.Drawing.Point(767, 7);
+            this.txtSrh查询.Name = "txtSrh查询";
+            this.txtSrh查询.Size = new System.Drawing.Size(80, 21);
+            this.txtSrh查询.TabIndex = 1;
             // 
-            // btnSearch
+            // btnSrh查询
             // 
-            this.btnSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnSrh查询.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnSrh查询.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSearch.Location = new System.Drawing.Point(866, 6);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 0;
-            this.btnSearch.Text = "查询";
+            this.btnSrh查询.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnSrh查询.Location = new System.Drawing.Point(866, 6);
+            this.btnSrh查询.Name = "btnSrh查询";
+            this.btnSrh查询.Size = new System.Drawing.Size(75, 23);
+            this.btnSrh查询.TabIndex = 0;
+            this.btnSrh查询.Text = "查询";
+            this.btnSrh查询.Click += new System.EventHandler(this.btnSrh查询_Click);
             // 
             // textBoxX8
             // 
@@ -222,11 +230,13 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.BackColor = System.Drawing.Color.Transparent;
             this.tabControl1.CanReorderTabs = true;
             this.tabControl1.Controls.Add(this.tabControlPanel1);
             this.tabControl1.Controls.Add(this.tabControlPanel2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabControl1.Location = new System.Drawing.Point(0, 39);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedTabFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
@@ -286,6 +296,126 @@
             this.tabControlPanel1.Style.GradientAngle = 90;
             this.tabControlPanel1.TabIndex = 1;
             this.tabControlPanel1.TabItem = this.tabItem1;
+            // 
+            // labelX11
+            // 
+            this.labelX11.BackColor = System.Drawing.Color.Transparent;
+            this.labelX11.Location = new System.Drawing.Point(179, 225);
+            this.labelX11.Name = "labelX11";
+            this.labelX11.Size = new System.Drawing.Size(54, 23);
+            this.labelX11.TabIndex = 37;
+            this.labelX11.Text = "年假";
+            // 
+            // labelX12
+            // 
+            this.labelX12.BackColor = System.Drawing.Color.Transparent;
+            this.labelX12.Location = new System.Drawing.Point(179, 198);
+            this.labelX12.Name = "labelX12";
+            this.labelX12.Size = new System.Drawing.Size(54, 23);
+            this.labelX12.TabIndex = 36;
+            this.labelX12.Text = "特困基金";
+            // 
+            // labelX13
+            // 
+            this.labelX13.BackColor = System.Drawing.Color.Transparent;
+            this.labelX13.Location = new System.Drawing.Point(179, 252);
+            this.labelX13.Name = "labelX13";
+            this.labelX13.Size = new System.Drawing.Size(54, 23);
+            this.labelX13.TabIndex = 35;
+            this.labelX13.Text = "剩余年假";
+            // 
+            // textBoxX12
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX12.Border.Class = "TextBoxBorder";
+            this.textBoxX12.Location = new System.Drawing.Point(239, 229);
+            this.textBoxX12.Name = "textBoxX12";
+            this.textBoxX12.Size = new System.Drawing.Size(84, 21);
+            this.textBoxX12.TabIndex = 34;
+            // 
+            // textBoxX13
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX13.Border.Class = "TextBoxBorder";
+            this.textBoxX13.Location = new System.Drawing.Point(239, 202);
+            this.textBoxX13.Name = "textBoxX13";
+            this.textBoxX13.Size = new System.Drawing.Size(84, 21);
+            this.textBoxX13.TabIndex = 33;
+            // 
+            // textBoxX14
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX14.Border.Class = "TextBoxBorder";
+            this.textBoxX14.Location = new System.Drawing.Point(239, 256);
+            this.textBoxX14.Name = "textBoxX14";
+            this.textBoxX14.Size = new System.Drawing.Size(84, 21);
+            this.textBoxX14.TabIndex = 32;
+            // 
+            // labelX14
+            // 
+            this.labelX14.BackColor = System.Drawing.Color.Transparent;
+            this.labelX14.Location = new System.Drawing.Point(15, 225);
+            this.labelX14.Name = "labelX14";
+            this.labelX14.Size = new System.Drawing.Size(54, 23);
+            this.labelX14.TabIndex = 31;
+            this.labelX14.Text = "公积金";
+            // 
+            // labelX15
+            // 
+            this.labelX15.BackColor = System.Drawing.Color.Transparent;
+            this.labelX15.Location = new System.Drawing.Point(15, 198);
+            this.labelX15.Name = "labelX15";
+            this.labelX15.Size = new System.Drawing.Size(54, 23);
+            this.labelX15.TabIndex = 30;
+            this.labelX15.Text = "社保";
+            // 
+            // labelX16
+            // 
+            this.labelX16.BackColor = System.Drawing.Color.Transparent;
+            this.labelX16.Location = new System.Drawing.Point(15, 252);
+            this.labelX16.Name = "labelX16";
+            this.labelX16.Size = new System.Drawing.Size(54, 23);
+            this.labelX16.TabIndex = 29;
+            this.labelX16.Text = "工会费";
+            // 
+            // textBoxX15
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX15.Border.Class = "TextBoxBorder";
+            this.textBoxX15.Location = new System.Drawing.Point(75, 229);
+            this.textBoxX15.Name = "textBoxX15";
+            this.textBoxX15.Size = new System.Drawing.Size(84, 21);
+            this.textBoxX15.TabIndex = 28;
+            // 
+            // textBoxX16
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX16.Border.Class = "TextBoxBorder";
+            this.textBoxX16.Location = new System.Drawing.Point(75, 202);
+            this.textBoxX16.Name = "textBoxX16";
+            this.textBoxX16.Size = new System.Drawing.Size(84, 21);
+            this.textBoxX16.TabIndex = 27;
+            // 
+            // textBoxX17
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX17.Border.Class = "TextBoxBorder";
+            this.textBoxX17.Location = new System.Drawing.Point(75, 256);
+            this.textBoxX17.Name = "textBoxX17";
+            this.textBoxX17.Size = new System.Drawing.Size(84, 21);
+            this.textBoxX17.TabIndex = 26;
             // 
             // labelX6
             // 
@@ -464,10 +594,10 @@
             // panelRight
             // 
             this.panelRight.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelRight.Controls.Add(this.btnPrint);
-            this.panelRight.Controls.Add(this.btnAdd);
-            this.panelRight.Controls.Add(this.btnEdit);
-            this.panelRight.Controls.Add(this.btnDel);
+            this.panelRight.Controls.Add(this.btnPrt打印);
+            this.panelRight.Controls.Add(this.btnAdd新增);
+            this.panelRight.Controls.Add(this.btnEdit修改);
+            this.panelRight.Controls.Add(this.btnDel删除);
             this.panelRight.Controls.Add(this.tabControl1);
             this.panelRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelRight.Location = new System.Drawing.Point(425, 35);
@@ -482,165 +612,60 @@
             this.panelRight.Style.GradientAngle = 90;
             this.panelRight.TabIndex = 5;
             // 
-            // btnPrint
+            // btnPrt打印
             // 
-            this.btnPrint.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnPrint.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnPrint.Location = new System.Drawing.Point(15, 10);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(75, 23);
-            this.btnPrint.TabIndex = 17;
-            this.btnPrint.Text = "打印";
+            this.btnPrt打印.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnPrt打印.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnPrt打印.Location = new System.Drawing.Point(15, 10);
+            this.btnPrt打印.Name = "btnPrt打印";
+            this.btnPrt打印.Size = new System.Drawing.Size(75, 23);
+            this.btnPrt打印.TabIndex = 17;
+            this.btnPrt打印.Text = "打印";
             // 
-            // btnAdd
+            // btnAdd新增
             // 
-            this.btnAdd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAdd.Location = new System.Drawing.Point(279, 10);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 16;
-            this.btnAdd.Text = "新增";
+            this.btnAdd新增.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnAdd新增.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd新增.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnAdd新增.Location = new System.Drawing.Point(279, 10);
+            this.btnAdd新增.Name = "btnAdd新增";
+            this.btnAdd新增.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd新增.TabIndex = 16;
+            this.btnAdd新增.Text = "新增";
             // 
-            // btnEdit
+            // btnEdit修改
             // 
-            this.btnEdit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnEdit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnEdit.Location = new System.Drawing.Point(360, 10);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 16;
-            this.btnEdit.Text = "修改";
+            this.btnEdit修改.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnEdit修改.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit修改.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnEdit修改.Location = new System.Drawing.Point(360, 10);
+            this.btnEdit修改.Name = "btnEdit修改";
+            this.btnEdit修改.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit修改.TabIndex = 16;
+            this.btnEdit修改.Text = "修改";
             // 
-            // btnDel
+            // btnDel删除
             // 
-            this.btnDel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnDel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnDel.Location = new System.Drawing.Point(441, 10);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 23);
-            this.btnDel.TabIndex = 5;
-            this.btnDel.Text = "删除";
+            this.btnDel删除.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnDel删除.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDel删除.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnDel删除.Location = new System.Drawing.Point(441, 10);
+            this.btnDel删除.Name = "btnDel删除";
+            this.btnDel删除.Size = new System.Drawing.Size(75, 23);
+            this.btnDel删除.TabIndex = 5;
+            this.btnDel删除.Text = "删除";
             // 
-            // labelX11
+            // 姓名
             // 
-            this.labelX11.BackColor = System.Drawing.Color.Transparent;
-            this.labelX11.Location = new System.Drawing.Point(179, 225);
-            this.labelX11.Name = "labelX11";
-            this.labelX11.Size = new System.Drawing.Size(54, 23);
-            this.labelX11.TabIndex = 37;
-            this.labelX11.Text = "年假";
+            this.姓名.Text = "姓名";
             // 
-            // labelX12
+            // 部门
             // 
-            this.labelX12.BackColor = System.Drawing.Color.Transparent;
-            this.labelX12.Location = new System.Drawing.Point(179, 198);
-            this.labelX12.Name = "labelX12";
-            this.labelX12.Size = new System.Drawing.Size(54, 23);
-            this.labelX12.TabIndex = 36;
-            this.labelX12.Text = "特困基金";
+            this.部门.Text = "部门";
             // 
-            // labelX13
+            // 状态
             // 
-            this.labelX13.BackColor = System.Drawing.Color.Transparent;
-            this.labelX13.Location = new System.Drawing.Point(179, 252);
-            this.labelX13.Name = "labelX13";
-            this.labelX13.Size = new System.Drawing.Size(54, 23);
-            this.labelX13.TabIndex = 35;
-            this.labelX13.Text = "剩余年假";
-            // 
-            // textBoxX12
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX12.Border.Class = "TextBoxBorder";
-            this.textBoxX12.Location = new System.Drawing.Point(239, 229);
-            this.textBoxX12.Name = "textBoxX12";
-            this.textBoxX12.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX12.TabIndex = 34;
-            // 
-            // textBoxX13
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX13.Border.Class = "TextBoxBorder";
-            this.textBoxX13.Location = new System.Drawing.Point(239, 202);
-            this.textBoxX13.Name = "textBoxX13";
-            this.textBoxX13.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX13.TabIndex = 33;
-            // 
-            // textBoxX14
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX14.Border.Class = "TextBoxBorder";
-            this.textBoxX14.Location = new System.Drawing.Point(239, 256);
-            this.textBoxX14.Name = "textBoxX14";
-            this.textBoxX14.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX14.TabIndex = 32;
-            // 
-            // labelX14
-            // 
-            this.labelX14.BackColor = System.Drawing.Color.Transparent;
-            this.labelX14.Location = new System.Drawing.Point(15, 225);
-            this.labelX14.Name = "labelX14";
-            this.labelX14.Size = new System.Drawing.Size(54, 23);
-            this.labelX14.TabIndex = 31;
-            this.labelX14.Text = "公积金";
-            // 
-            // labelX15
-            // 
-            this.labelX15.BackColor = System.Drawing.Color.Transparent;
-            this.labelX15.Location = new System.Drawing.Point(15, 198);
-            this.labelX15.Name = "labelX15";
-            this.labelX15.Size = new System.Drawing.Size(54, 23);
-            this.labelX15.TabIndex = 30;
-            this.labelX15.Text = "社保";
-            // 
-            // labelX16
-            // 
-            this.labelX16.BackColor = System.Drawing.Color.Transparent;
-            this.labelX16.Location = new System.Drawing.Point(15, 252);
-            this.labelX16.Name = "labelX16";
-            this.labelX16.Size = new System.Drawing.Size(54, 23);
-            this.labelX16.TabIndex = 29;
-            this.labelX16.Text = "工会费";
-            // 
-            // textBoxX15
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX15.Border.Class = "TextBoxBorder";
-            this.textBoxX15.Location = new System.Drawing.Point(75, 229);
-            this.textBoxX15.Name = "textBoxX15";
-            this.textBoxX15.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX15.TabIndex = 28;
-            // 
-            // textBoxX16
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX16.Border.Class = "TextBoxBorder";
-            this.textBoxX16.Location = new System.Drawing.Point(75, 202);
-            this.textBoxX16.Name = "textBoxX16";
-            this.textBoxX16.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX16.TabIndex = 27;
-            // 
-            // textBoxX17
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX17.Border.Class = "TextBoxBorder";
-            this.textBoxX17.Location = new System.Drawing.Point(75, 256);
-            this.textBoxX17.Name = "textBoxX17";
-            this.textBoxX17.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX17.TabIndex = 26;
+            this.状态.Text = "状态";
             // 
             // FrmEmployee
             // 
@@ -676,9 +701,9 @@
         private DevComponents.DotNetBar.TabControl tabControl1;
         private DevComponents.DotNetBar.TabControlPanel tabControlPanel1;
         private DevComponents.DotNetBar.TabItem tabItem1;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxEx1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
-        private DevComponents.DotNetBar.ButtonX btnSearch;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbSrh查询;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtSrh查询;
+        private DevComponents.DotNetBar.ButtonX btnSrh查询;
         private DevComponents.DotNetBar.LabelX labelX5;
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.LabelX labelX3;
@@ -687,9 +712,9 @@
         private DevComponents.DotNetBar.TabControlPanel tabControlPanel2;
         private DevComponents.DotNetBar.TabItem tabItem2;
         private DevComponents.DotNetBar.PanelEx panelRight;
-        private DevComponents.DotNetBar.ButtonX btnAdd;
-        private DevComponents.DotNetBar.ButtonX btnEdit;
-        private DevComponents.DotNetBar.ButtonX btnDel;
+        private DevComponents.DotNetBar.ButtonX btnAdd新增;
+        private DevComponents.DotNetBar.ButtonX btnEdit修改;
+        private DevComponents.DotNetBar.ButtonX btnDel删除;
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.LabelX labelX7;
         private DevComponents.DotNetBar.LabelX labelX8;
@@ -700,7 +725,7 @@
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX9;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX10;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX11;
-        private DevComponents.DotNetBar.ButtonX btnPrint;
+        private DevComponents.DotNetBar.ButtonX btnPrt打印;
         private DevComponents.DotNetBar.LabelX labelX11;
         private DevComponents.DotNetBar.LabelX labelX12;
         private DevComponents.DotNetBar.LabelX labelX13;
@@ -713,6 +738,9 @@
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX15;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX16;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX17;
+        private DevComponents.Editors.ComboItem 姓名;
+        private DevComponents.Editors.ComboItem 部门;
+        private DevComponents.Editors.ComboItem 状态;
 
     }
 }

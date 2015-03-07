@@ -24,10 +24,16 @@ namespace HBPersonnelFile.BaseInfo
 
         private void FrmEmployee_Load(object sender, EventArgs e)
         {
+            //Dgv读取数据
             string sql = "SELECT * FROM Tyg员工";
             dgv.DataSource = FrmMain.jxcClient.GetTable(sql,1);
             WinUI.SetRowNum(dgv);
             WinUI.FormatGrid(dgv);
+        }
+
+        private void btnSrh查询_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
