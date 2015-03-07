@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using HBPersonnelFile.BaseInfo;
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace HBPersonnelFile
@@ -38,6 +39,8 @@ namespace HBPersonnelFile
         private void MainForm_Load(object sender, EventArgs e)
         {
             InitializeUI();//初始化界面
+            FrmEmployee frm = new FrmEmployee();
+            frm.Show(sDPanel);
         }
 
         private void InitializeUI()
@@ -55,8 +58,23 @@ namespace HBPersonnelFile
 #if DEBUG
             menu_Main.Visible = true;
 #endif
-
+            //if (!Login())
+            //    Application.Exit();
             ShowToolBox();
+        }
+        private bool Login()
+        {
+            FrmLogin frm = new FrmLogin();
+
+            if (frm.ShowDialog() != System.Windows.Forms.DialogResult.OK)
+                return false;
+            SetUserInfo();
+            this.WindowState = FormWindowState.Maximized;
+            return true;
+        }
+        private void SetUserInfo()
+        {
+         //   lblUserInfo.Text = "用户: " + User.UserName + "  登录时间:" + DateTime.Now.ToString();
         }
 
         private void SetStatusText()
@@ -68,6 +86,7 @@ namespace HBPersonnelFile
         {
             FrmToolBox = new FrmMainToolBox(this);
             FrmToolBox.Show(sDPanel, DockState.DockLeft);
+            sDPanel.DockLeftPortion = 0.15;
         }
 
         private void 人事资料ToolStripMenuItem_Click(object sender, EventArgs e)
