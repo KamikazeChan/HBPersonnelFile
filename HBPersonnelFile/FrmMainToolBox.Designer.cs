@@ -38,11 +38,13 @@
             // 
             this.treeView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView.Font = new System.Drawing.Font("宋体", 12F);
             this.treeView.Location = new System.Drawing.Point(0, 0);
             this.treeView.Name = "treeView";
             this.treeView.Size = new System.Drawing.Size(255, 601);
             this.treeView.StateImageList = this.imageList1;
             this.treeView.TabIndex = 0;
+            this.treeView.DoubleClick += new System.EventHandler(this.treeView_DoubleClick);
             // 
             // imageList1
             // 
