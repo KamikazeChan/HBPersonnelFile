@@ -42,8 +42,7 @@ namespace HBPersonnelFile.BaseInfo
             cbSrh查询.DisplayMember = "Text";
 
             //初始化右侧资料区
-            tabControlPanel1.Enabled = false;
-            tabControlPanel2.Enabled = false;
+            DisabledTabPage();
 
         }
 
@@ -58,13 +57,65 @@ namespace HBPersonnelFile.BaseInfo
 
         private void dgv_SelectionChanged(object sender, EventArgs e)
         {
-
+            if (dgv.Rows.Count < 1)
+                return;
+            DisabledTabPage();
         }
 
         private void txtSrh查询_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
                 btnSrh查询_Click(null, null);
+        }
+
+        private void btnAdd新增_Click(object sender, EventArgs e)
+        {
+            EnabledTabPage();
+            foreach (Control c in tabControlPanel1.Controls)
+            {
+                if (c is TextBox)
+                    c.Text = "";
+                if (c is RichTextBox)
+                    c.Text = "";
+            }
+        }
+
+        //允许编辑右侧资料区
+        private void EnabledTabPage()
+        {
+            tabControlPanel1.Enabled = true;
+            tabControlPanel2.Enabled = true;
+        }
+
+        //禁止编辑右侧资料区
+        private void DisabledTabPage()
+        {
+            tabControlPanel1.Enabled = false;
+            tabControlPanel2.Enabled = false;
+        }
+
+        private void btnEdit修改_Click(object sender, EventArgs e)
+        {
+            if (dgv.Rows.Count < 1)
+                return;
+
+            //设置右侧是否可以编辑
+            if (!tabControlPanel1.Enabled)
+                EnabledTabPage();
+            else
+                DisabledTabPage();
+        }
+
+        private void btnDel删除_Click(object sender, EventArgs e)
+        {
+            if (dgv.Rows.Count < 1)
+                return;
+
+        }
+
+        private void btnSave保存_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

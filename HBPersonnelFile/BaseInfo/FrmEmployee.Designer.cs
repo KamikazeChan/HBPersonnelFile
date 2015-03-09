@@ -35,35 +35,35 @@
             this.cbSrh查询 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.txtSrh查询 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btnSrh查询 = new DevComponents.DotNetBar.ButtonX();
-            this.textBoxX8 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX7 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX5 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX6 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtC出生月份 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtX姓名 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtC出生年份 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtD电话 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtX性别 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tabControl = new DevComponents.DotNetBar.TabControl();
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.labelX13 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX12 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX13 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX14 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtN年假 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtT特困基金 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtS剩余年假 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX14 = new DevComponents.DotNetBar.LabelX();
             this.labelX15 = new DevComponents.DotNetBar.LabelX();
             this.labelX16 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX15 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX16 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX17 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtG公积金 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtS社保 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtG工会费 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX9 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX10 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX11 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtB部门 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtR入职日期 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtL离职如期 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtY员工类型 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtZ状态 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
@@ -77,6 +77,7 @@
             this.btnAdd新增 = new DevComponents.DotNetBar.ButtonX();
             this.btnEdit修改 = new DevComponents.DotNetBar.ButtonX();
             this.btnDel删除 = new DevComponents.DotNetBar.ButtonX();
+            this.btnSave保存 = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl)).BeginInit();
@@ -169,60 +170,60 @@
             this.btnSrh查询.Text = "查询";
             this.btnSrh查询.Click += new System.EventHandler(this.btnSrh查询_Click);
             // 
-            // textBoxX8
+            // txtC出生月份
             // 
             // 
             // 
             // 
-            this.textBoxX8.Border.Class = "TextBoxBorder";
-            this.textBoxX8.Location = new System.Drawing.Point(75, 104);
-            this.textBoxX8.Name = "textBoxX8";
-            this.textBoxX8.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX8.TabIndex = 9;
+            this.txtC出生月份.Border.Class = "TextBoxBorder";
+            this.txtC出生月份.Location = new System.Drawing.Point(75, 104);
+            this.txtC出生月份.Name = "txtC出生月份";
+            this.txtC出生月份.Size = new System.Drawing.Size(84, 21);
+            this.txtC出生月份.TabIndex = 9;
             // 
-            // textBoxX7
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX7.Border.Class = "TextBoxBorder";
-            this.textBoxX7.Location = new System.Drawing.Point(75, 23);
-            this.textBoxX7.Name = "textBoxX7";
-            this.textBoxX7.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX7.TabIndex = 7;
-            // 
-            // textBoxX5
+            // txtX姓名
             // 
             // 
             // 
             // 
-            this.textBoxX5.Border.Class = "TextBoxBorder";
-            this.textBoxX5.Location = new System.Drawing.Point(75, 77);
-            this.textBoxX5.Name = "textBoxX5";
-            this.textBoxX5.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX5.TabIndex = 5;
+            this.txtX姓名.Border.Class = "TextBoxBorder";
+            this.txtX姓名.Location = new System.Drawing.Point(75, 23);
+            this.txtX姓名.Name = "txtX姓名";
+            this.txtX姓名.Size = new System.Drawing.Size(84, 21);
+            this.txtX姓名.TabIndex = 7;
             // 
-            // textBoxX6
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX6.Border.Class = "TextBoxBorder";
-            this.textBoxX6.Location = new System.Drawing.Point(75, 131);
-            this.textBoxX6.Name = "textBoxX6";
-            this.textBoxX6.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX6.TabIndex = 3;
-            // 
-            // textBoxX4
+            // txtC出生年份
             // 
             // 
             // 
             // 
-            this.textBoxX4.Border.Class = "TextBoxBorder";
-            this.textBoxX4.Location = new System.Drawing.Point(75, 50);
-            this.textBoxX4.Name = "textBoxX4";
-            this.textBoxX4.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX4.TabIndex = 1;
+            this.txtC出生年份.Border.Class = "TextBoxBorder";
+            this.txtC出生年份.Location = new System.Drawing.Point(75, 77);
+            this.txtC出生年份.Name = "txtC出生年份";
+            this.txtC出生年份.Size = new System.Drawing.Size(84, 21);
+            this.txtC出生年份.TabIndex = 5;
+            // 
+            // txtD电话
+            // 
+            // 
+            // 
+            // 
+            this.txtD电话.Border.Class = "TextBoxBorder";
+            this.txtD电话.Location = new System.Drawing.Point(75, 131);
+            this.txtD电话.Name = "txtD电话";
+            this.txtD电话.Size = new System.Drawing.Size(84, 21);
+            this.txtD电话.TabIndex = 3;
+            // 
+            // txtX性别
+            // 
+            // 
+            // 
+            // 
+            this.txtX性别.Border.Class = "TextBoxBorder";
+            this.txtX性别.Location = new System.Drawing.Point(75, 50);
+            this.txtX性别.Name = "txtX性别";
+            this.txtX性别.Size = new System.Drawing.Size(84, 21);
+            this.txtX性别.TabIndex = 1;
             // 
             // tabControl
             // 
@@ -246,38 +247,39 @@
             // 
             // tabControlPanel1
             // 
+            this.tabControlPanel1.Controls.Add(this.btnSave保存);
             this.tabControlPanel1.Controls.Add(this.labelX11);
             this.tabControlPanel1.Controls.Add(this.labelX12);
             this.tabControlPanel1.Controls.Add(this.labelX13);
-            this.tabControlPanel1.Controls.Add(this.textBoxX12);
-            this.tabControlPanel1.Controls.Add(this.textBoxX13);
-            this.tabControlPanel1.Controls.Add(this.textBoxX14);
+            this.tabControlPanel1.Controls.Add(this.txtN年假);
+            this.tabControlPanel1.Controls.Add(this.txtT特困基金);
+            this.tabControlPanel1.Controls.Add(this.txtS剩余年假);
             this.tabControlPanel1.Controls.Add(this.labelX14);
             this.tabControlPanel1.Controls.Add(this.labelX15);
             this.tabControlPanel1.Controls.Add(this.labelX16);
-            this.tabControlPanel1.Controls.Add(this.textBoxX15);
-            this.tabControlPanel1.Controls.Add(this.textBoxX16);
-            this.tabControlPanel1.Controls.Add(this.textBoxX17);
+            this.tabControlPanel1.Controls.Add(this.txtG公积金);
+            this.tabControlPanel1.Controls.Add(this.txtS社保);
+            this.tabControlPanel1.Controls.Add(this.txtG工会费);
             this.tabControlPanel1.Controls.Add(this.labelX6);
             this.tabControlPanel1.Controls.Add(this.labelX7);
             this.tabControlPanel1.Controls.Add(this.labelX8);
             this.tabControlPanel1.Controls.Add(this.labelX9);
             this.tabControlPanel1.Controls.Add(this.labelX10);
-            this.tabControlPanel1.Controls.Add(this.textBoxX2);
-            this.tabControlPanel1.Controls.Add(this.textBoxX3);
-            this.tabControlPanel1.Controls.Add(this.textBoxX9);
-            this.tabControlPanel1.Controls.Add(this.textBoxX10);
-            this.tabControlPanel1.Controls.Add(this.textBoxX11);
+            this.tabControlPanel1.Controls.Add(this.txtB部门);
+            this.tabControlPanel1.Controls.Add(this.txtR入职日期);
+            this.tabControlPanel1.Controls.Add(this.txtL离职如期);
+            this.tabControlPanel1.Controls.Add(this.txtY员工类型);
+            this.tabControlPanel1.Controls.Add(this.txtZ状态);
             this.tabControlPanel1.Controls.Add(this.labelX5);
             this.tabControlPanel1.Controls.Add(this.labelX4);
             this.tabControlPanel1.Controls.Add(this.labelX3);
             this.tabControlPanel1.Controls.Add(this.labelX2);
             this.tabControlPanel1.Controls.Add(this.labelX1);
-            this.tabControlPanel1.Controls.Add(this.textBoxX8);
-            this.tabControlPanel1.Controls.Add(this.textBoxX7);
-            this.tabControlPanel1.Controls.Add(this.textBoxX4);
-            this.tabControlPanel1.Controls.Add(this.textBoxX5);
-            this.tabControlPanel1.Controls.Add(this.textBoxX6);
+            this.tabControlPanel1.Controls.Add(this.txtC出生月份);
+            this.tabControlPanel1.Controls.Add(this.txtX姓名);
+            this.tabControlPanel1.Controls.Add(this.txtX性别);
+            this.tabControlPanel1.Controls.Add(this.txtC出生年份);
+            this.tabControlPanel1.Controls.Add(this.txtD电话);
             this.tabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlPanel1.Location = new System.Drawing.Point(0, 26);
             this.tabControlPanel1.Name = "tabControlPanel1";
@@ -320,38 +322,38 @@
             this.labelX13.TabIndex = 35;
             this.labelX13.Text = "剩余年假";
             // 
-            // textBoxX12
+            // txtN年假
             // 
             // 
             // 
             // 
-            this.textBoxX12.Border.Class = "TextBoxBorder";
-            this.textBoxX12.Location = new System.Drawing.Point(239, 229);
-            this.textBoxX12.Name = "textBoxX12";
-            this.textBoxX12.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX12.TabIndex = 34;
+            this.txtN年假.Border.Class = "TextBoxBorder";
+            this.txtN年假.Location = new System.Drawing.Point(239, 229);
+            this.txtN年假.Name = "txtN年假";
+            this.txtN年假.Size = new System.Drawing.Size(84, 21);
+            this.txtN年假.TabIndex = 34;
             // 
-            // textBoxX13
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX13.Border.Class = "TextBoxBorder";
-            this.textBoxX13.Location = new System.Drawing.Point(239, 202);
-            this.textBoxX13.Name = "textBoxX13";
-            this.textBoxX13.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX13.TabIndex = 33;
-            // 
-            // textBoxX14
+            // txtT特困基金
             // 
             // 
             // 
             // 
-            this.textBoxX14.Border.Class = "TextBoxBorder";
-            this.textBoxX14.Location = new System.Drawing.Point(239, 256);
-            this.textBoxX14.Name = "textBoxX14";
-            this.textBoxX14.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX14.TabIndex = 32;
+            this.txtT特困基金.Border.Class = "TextBoxBorder";
+            this.txtT特困基金.Location = new System.Drawing.Point(239, 202);
+            this.txtT特困基金.Name = "txtT特困基金";
+            this.txtT特困基金.Size = new System.Drawing.Size(84, 21);
+            this.txtT特困基金.TabIndex = 33;
+            // 
+            // txtS剩余年假
+            // 
+            // 
+            // 
+            // 
+            this.txtS剩余年假.Border.Class = "TextBoxBorder";
+            this.txtS剩余年假.Location = new System.Drawing.Point(239, 256);
+            this.txtS剩余年假.Name = "txtS剩余年假";
+            this.txtS剩余年假.Size = new System.Drawing.Size(84, 21);
+            this.txtS剩余年假.TabIndex = 32;
             // 
             // labelX14
             // 
@@ -380,38 +382,38 @@
             this.labelX16.TabIndex = 29;
             this.labelX16.Text = "工会费";
             // 
-            // textBoxX15
+            // txtG公积金
             // 
             // 
             // 
             // 
-            this.textBoxX15.Border.Class = "TextBoxBorder";
-            this.textBoxX15.Location = new System.Drawing.Point(75, 229);
-            this.textBoxX15.Name = "textBoxX15";
-            this.textBoxX15.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX15.TabIndex = 28;
+            this.txtG公积金.Border.Class = "TextBoxBorder";
+            this.txtG公积金.Location = new System.Drawing.Point(75, 229);
+            this.txtG公积金.Name = "txtG公积金";
+            this.txtG公积金.Size = new System.Drawing.Size(84, 21);
+            this.txtG公积金.TabIndex = 28;
             // 
-            // textBoxX16
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX16.Border.Class = "TextBoxBorder";
-            this.textBoxX16.Location = new System.Drawing.Point(75, 202);
-            this.textBoxX16.Name = "textBoxX16";
-            this.textBoxX16.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX16.TabIndex = 27;
-            // 
-            // textBoxX17
+            // txtS社保
             // 
             // 
             // 
             // 
-            this.textBoxX17.Border.Class = "TextBoxBorder";
-            this.textBoxX17.Location = new System.Drawing.Point(75, 256);
-            this.textBoxX17.Name = "textBoxX17";
-            this.textBoxX17.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX17.TabIndex = 26;
+            this.txtS社保.Border.Class = "TextBoxBorder";
+            this.txtS社保.Location = new System.Drawing.Point(75, 202);
+            this.txtS社保.Name = "txtS社保";
+            this.txtS社保.Size = new System.Drawing.Size(84, 21);
+            this.txtS社保.TabIndex = 27;
+            // 
+            // txtG工会费
+            // 
+            // 
+            // 
+            // 
+            this.txtG工会费.Border.Class = "TextBoxBorder";
+            this.txtG工会费.Location = new System.Drawing.Point(75, 256);
+            this.txtG工会费.Name = "txtG工会费";
+            this.txtG工会费.Size = new System.Drawing.Size(84, 21);
+            this.txtG工会费.TabIndex = 26;
             // 
             // labelX6
             // 
@@ -458,60 +460,60 @@
             this.labelX10.TabIndex = 21;
             this.labelX10.Text = "入职日期";
             // 
-            // textBoxX2
+            // txtB部门
             // 
             // 
             // 
             // 
-            this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Location = new System.Drawing.Point(239, 104);
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX2.TabIndex = 20;
+            this.txtB部门.Border.Class = "TextBoxBorder";
+            this.txtB部门.Location = new System.Drawing.Point(239, 104);
+            this.txtB部门.Name = "txtB部门";
+            this.txtB部门.Size = new System.Drawing.Size(84, 21);
+            this.txtB部门.TabIndex = 20;
             // 
-            // textBoxX3
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX3.Border.Class = "TextBoxBorder";
-            this.textBoxX3.Location = new System.Drawing.Point(239, 23);
-            this.textBoxX3.Name = "textBoxX3";
-            this.textBoxX3.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX3.TabIndex = 19;
-            // 
-            // textBoxX9
+            // txtR入职日期
             // 
             // 
             // 
             // 
-            this.textBoxX9.Border.Class = "TextBoxBorder";
-            this.textBoxX9.Location = new System.Drawing.Point(239, 50);
-            this.textBoxX9.Name = "textBoxX9";
-            this.textBoxX9.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX9.TabIndex = 16;
+            this.txtR入职日期.Border.Class = "TextBoxBorder";
+            this.txtR入职日期.Location = new System.Drawing.Point(239, 23);
+            this.txtR入职日期.Name = "txtR入职日期";
+            this.txtR入职日期.Size = new System.Drawing.Size(84, 21);
+            this.txtR入职日期.TabIndex = 19;
             // 
-            // textBoxX10
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX10.Border.Class = "TextBoxBorder";
-            this.textBoxX10.Location = new System.Drawing.Point(239, 77);
-            this.textBoxX10.Name = "textBoxX10";
-            this.textBoxX10.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX10.TabIndex = 18;
-            // 
-            // textBoxX11
+            // txtL离职如期
             // 
             // 
             // 
             // 
-            this.textBoxX11.Border.Class = "TextBoxBorder";
-            this.textBoxX11.Location = new System.Drawing.Point(239, 131);
-            this.textBoxX11.Name = "textBoxX11";
-            this.textBoxX11.Size = new System.Drawing.Size(84, 21);
-            this.textBoxX11.TabIndex = 17;
+            this.txtL离职如期.Border.Class = "TextBoxBorder";
+            this.txtL离职如期.Location = new System.Drawing.Point(239, 50);
+            this.txtL离职如期.Name = "txtL离职如期";
+            this.txtL离职如期.Size = new System.Drawing.Size(84, 21);
+            this.txtL离职如期.TabIndex = 16;
+            // 
+            // txtY员工类型
+            // 
+            // 
+            // 
+            // 
+            this.txtY员工类型.Border.Class = "TextBoxBorder";
+            this.txtY员工类型.Location = new System.Drawing.Point(239, 77);
+            this.txtY员工类型.Name = "txtY员工类型";
+            this.txtY员工类型.Size = new System.Drawing.Size(84, 21);
+            this.txtY员工类型.TabIndex = 18;
+            // 
+            // txtZ状态
+            // 
+            // 
+            // 
+            // 
+            this.txtZ状态.Border.Class = "TextBoxBorder";
+            this.txtZ状态.Location = new System.Drawing.Point(239, 131);
+            this.txtZ状态.Name = "txtZ状态";
+            this.txtZ状态.Size = new System.Drawing.Size(84, 21);
+            this.txtZ状态.TabIndex = 17;
             // 
             // labelX5
             // 
@@ -616,7 +618,7 @@
             this.btnPrt打印.Name = "btnPrt打印";
             this.btnPrt打印.Size = new System.Drawing.Size(75, 23);
             this.btnPrt打印.TabIndex = 17;
-            this.btnPrt打印.Text = "打印";
+            this.btnPrt打印.Text = "打 印";
             // 
             // btnAdd新增
             // 
@@ -627,7 +629,8 @@
             this.btnAdd新增.Name = "btnAdd新增";
             this.btnAdd新增.Size = new System.Drawing.Size(75, 23);
             this.btnAdd新增.TabIndex = 16;
-            this.btnAdd新增.Text = "新增";
+            this.btnAdd新增.Text = "新 增";
+            this.btnAdd新增.Click += new System.EventHandler(this.btnAdd新增_Click);
             // 
             // btnEdit修改
             // 
@@ -638,7 +641,8 @@
             this.btnEdit修改.Name = "btnEdit修改";
             this.btnEdit修改.Size = new System.Drawing.Size(75, 23);
             this.btnEdit修改.TabIndex = 16;
-            this.btnEdit修改.Text = "修改";
+            this.btnEdit修改.Text = "修 改";
+            this.btnEdit修改.Click += new System.EventHandler(this.btnEdit修改_Click);
             // 
             // btnDel删除
             // 
@@ -649,7 +653,20 @@
             this.btnDel删除.Name = "btnDel删除";
             this.btnDel删除.Size = new System.Drawing.Size(75, 23);
             this.btnDel删除.TabIndex = 5;
-            this.btnDel删除.Text = "删除";
+            this.btnDel删除.Text = "删 除";
+            this.btnDel删除.Click += new System.EventHandler(this.btnDel删除_Click);
+            // 
+            // btnSave保存
+            // 
+            this.btnSave保存.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnSave保存.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave保存.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnSave保存.Location = new System.Drawing.Point(15, 311);
+            this.btnSave保存.Name = "btnSave保存";
+            this.btnSave保存.Size = new System.Drawing.Size(75, 23);
+            this.btnSave保存.TabIndex = 38;
+            this.btnSave保存.Text = "保 存";
+            this.btnSave保存.Click += new System.EventHandler(this.btnSave保存_Click);
             // 
             // FrmEmployee
             // 
@@ -677,11 +694,11 @@
 
         private DevComponents.DotNetBar.Controls.DataGridViewX dgv;
         private DevComponents.DotNetBar.PanelEx panelTop;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX8;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX7;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX5;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX6;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX4;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtC出生月份;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtX姓名;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtC出生年份;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtD电话;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtX性别;
         private DevComponents.DotNetBar.TabControl tabControl;
         private DevComponents.DotNetBar.TabControlPanel tabControlPanel1;
         private DevComponents.DotNetBar.TabItem tabItem1;
@@ -704,24 +721,25 @@
         private DevComponents.DotNetBar.LabelX labelX8;
         private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.LabelX labelX10;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX3;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX9;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX10;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX11;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtB部门;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtR入职日期;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtL离职如期;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtY员工类型;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtZ状态;
         private DevComponents.DotNetBar.ButtonX btnPrt打印;
         private DevComponents.DotNetBar.LabelX labelX11;
         private DevComponents.DotNetBar.LabelX labelX12;
         private DevComponents.DotNetBar.LabelX labelX13;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX12;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX13;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX14;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtN年假;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtT特困基金;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtS剩余年假;
         private DevComponents.DotNetBar.LabelX labelX14;
         private DevComponents.DotNetBar.LabelX labelX15;
         private DevComponents.DotNetBar.LabelX labelX16;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX15;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX16;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX17;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtG公积金;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtS社保;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtG工会费;
+        private DevComponents.DotNetBar.ButtonX btnSave保存;
 
     }
 }
