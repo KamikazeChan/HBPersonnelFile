@@ -13,7 +13,7 @@ namespace HBPersonnelFile.BaseInfo
     public partial class FrmEmployee :DockContent
     {
         BindingSource bind = new BindingSource();
-
+        bool bindOnce = true;
 
         public FrmEmployee()
         {
@@ -28,12 +28,7 @@ namespace HBPersonnelFile.BaseInfo
         private void FrmEmployee_Load(object sender, EventArgs e)
         {
             //Dgv读取数据
-            string sql = "SELECT * FROM Tyg员工";
-            DataTable dt = FrmMain.jxcClient.GetTable(sql,1);
-            bind.DataSource = dt;
-            dgv.DataSource = bind;
-            WinUI.SetRowNum(dgv);
-            WinUI.FormatGrid(dgv);
+            LoadData();
 
             //设置CombBox
             DataTable dtComboBox = new DataTable();
@@ -53,10 +48,20 @@ namespace HBPersonnelFile.BaseInfo
             SetBinding();
         }
 
+        private void LoadData()
+        {
+            string sql = "SELECT * FROM Tyg员工";
+            DataTable dt = FrmMain.jxcClient.GetTable(sql, 1);
+            bind.DataSource = dt;
+            dgv.DataSource = bind;
+            WinUI.SetRowNum(dgv);
+            WinUI.FormatGrid(dgv);
+        }
+
         private void btnSrh查询_Click(object sender, EventArgs e)
         {
             if (txtSrh查询.Text.Trim() == "")
-                return;
+                LoadData();
 
             string sql = string.Format("SELECT * FROM Tyg员工 WHERE {0} like '%{1}%'",cbSrh查询.SelectedValue.ToString(),txtSrh查询.Text.Trim());
             dgv.DataSource = FrmMain.jxcClient.GetTable(sql, 1);
@@ -72,6 +77,9 @@ namespace HBPersonnelFile.BaseInfo
 
         private void SetBinding()
         {
+            if (!bindOnce)
+                return;
+
             txtX姓名.DataBindings.Add(new Binding("Text", bind, "X姓名", true));
             txtX性别.DataBindings.Add(new Binding("Text", bind, "X性别", true));
             txtB部门.DataBindings.Add(new Binding("Text", bind, "B部门", true));
@@ -80,7 +88,7 @@ namespace HBPersonnelFile.BaseInfo
             txtD电话.DataBindings.Add(new Binding("Text", bind, "D电话", true));
             txtG工会费.DataBindings.Add(new Binding("Text", bind, "G工会费", true));
             txtG公积金.DataBindings.Add(new Binding("Text", bind, "G公积金", true));
-            txtL离职日期.DataBindings.Add(new Binding("Text", bind, "L离职如期", true));
+            txtL离职日期.DataBindings.Add(new Binding("Text", bind, "L离职日期", true));
             txtN年假.DataBindings.Add(new Binding("Text", bind, "N年假", true));
             txtR入职日期.DataBindings.Add(new Binding("Text", bind, "R入职日期", true));
             txtS社保.DataBindings.Add(new Binding("Text", bind, "S社保", true));
@@ -88,6 +96,8 @@ namespace HBPersonnelFile.BaseInfo
             txtT特困基金.DataBindings.Add(new Binding("Text", bind, "T特困基金", true));
             txtY员工类型.DataBindings.Add(new Binding("Text", bind, "Y员工类型", true));
             txtZ状态.DataBindings.Add(new Binding("Text", bind, "Z状态", true));
+
+            bindOnce = false;
         }
 
         private void txtSrh查询_KeyPress(object sender, KeyPressEventArgs e)
