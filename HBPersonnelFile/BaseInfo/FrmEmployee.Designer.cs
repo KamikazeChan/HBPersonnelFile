@@ -42,6 +42,7 @@
             this.txtX性别 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tabControl = new DevComponents.DotNetBar.TabControl();
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
+            this.btnSave保存 = new DevComponents.DotNetBar.ButtonX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.labelX13 = new DevComponents.DotNetBar.LabelX();
@@ -61,7 +62,7 @@
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.txtB部门 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtR入职日期 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtL离职如期 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtL离职日期 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtY员工类型 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtZ状态 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
@@ -77,7 +78,6 @@
             this.btnAdd新增 = new DevComponents.DotNetBar.ButtonX();
             this.btnEdit修改 = new DevComponents.DotNetBar.ButtonX();
             this.btnDel删除 = new DevComponents.DotNetBar.ButtonX();
-            this.btnSave保存 = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl)).BeginInit();
@@ -108,7 +108,7 @@
             this.dgv.ReadOnly = true;
             this.dgv.RowTemplate.Height = 23;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(425, 560);
+            this.dgv.Size = new System.Drawing.Size(468, 560);
             this.dgv.TabIndex = 0;
             this.dgv.SelectionChanged += new System.EventHandler(this.dgv_SelectionChanged);
             // 
@@ -238,7 +238,7 @@
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedTabFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
             this.tabControl.SelectedTabIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(528, 521);
+            this.tabControl.Size = new System.Drawing.Size(485, 521);
             this.tabControl.TabIndex = 4;
             this.tabControl.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
             this.tabControl.Tabs.Add(this.tabItem1);
@@ -267,7 +267,7 @@
             this.tabControlPanel1.Controls.Add(this.labelX10);
             this.tabControlPanel1.Controls.Add(this.txtB部门);
             this.tabControlPanel1.Controls.Add(this.txtR入职日期);
-            this.tabControlPanel1.Controls.Add(this.txtL离职如期);
+            this.tabControlPanel1.Controls.Add(this.txtL离职日期);
             this.tabControlPanel1.Controls.Add(this.txtY员工类型);
             this.tabControlPanel1.Controls.Add(this.txtZ状态);
             this.tabControlPanel1.Controls.Add(this.labelX5);
@@ -284,7 +284,7 @@
             this.tabControlPanel1.Location = new System.Drawing.Point(0, 26);
             this.tabControlPanel1.Name = "tabControlPanel1";
             this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel1.Size = new System.Drawing.Size(528, 495);
+            this.tabControlPanel1.Size = new System.Drawing.Size(485, 495);
             this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
             this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -294,6 +294,17 @@
             this.tabControlPanel1.Style.GradientAngle = 90;
             this.tabControlPanel1.TabIndex = 1;
             this.tabControlPanel1.TabItem = this.tabItem1;
+            // 
+            // btnSave保存
+            // 
+            this.btnSave保存.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnSave保存.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnSave保存.Location = new System.Drawing.Point(15, 309);
+            this.btnSave保存.Name = "btnSave保存";
+            this.btnSave保存.Size = new System.Drawing.Size(75, 23);
+            this.btnSave保存.TabIndex = 38;
+            this.btnSave保存.Text = "保 存";
+            this.btnSave保存.Click += new System.EventHandler(this.btnSave保存_Click);
             // 
             // labelX11
             // 
@@ -482,16 +493,16 @@
             this.txtR入职日期.Size = new System.Drawing.Size(84, 21);
             this.txtR入职日期.TabIndex = 19;
             // 
-            // txtL离职如期
+            // txtL离职日期
             // 
             // 
             // 
             // 
-            this.txtL离职如期.Border.Class = "TextBoxBorder";
-            this.txtL离职如期.Location = new System.Drawing.Point(239, 50);
-            this.txtL离职如期.Name = "txtL离职如期";
-            this.txtL离职如期.Size = new System.Drawing.Size(84, 21);
-            this.txtL离职如期.TabIndex = 16;
+            this.txtL离职日期.Border.Class = "TextBoxBorder";
+            this.txtL离职日期.Location = new System.Drawing.Point(239, 50);
+            this.txtL离职日期.Name = "txtL离职日期";
+            this.txtL离职日期.Size = new System.Drawing.Size(84, 21);
+            this.txtL离职日期.TabIndex = 16;
             // 
             // txtY员工类型
             // 
@@ -572,7 +583,7 @@
             this.tabControlPanel2.Location = new System.Drawing.Point(0, 26);
             this.tabControlPanel2.Name = "tabControlPanel2";
             this.tabControlPanel2.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel2.Size = new System.Drawing.Size(528, 495);
+            this.tabControlPanel2.Size = new System.Drawing.Size(485, 495);
             this.tabControlPanel2.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
             this.tabControlPanel2.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -598,9 +609,9 @@
             this.panelRight.Controls.Add(this.btnDel删除);
             this.panelRight.Controls.Add(this.tabControl);
             this.panelRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelRight.Location = new System.Drawing.Point(425, 35);
+            this.panelRight.Location = new System.Drawing.Point(468, 35);
             this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(528, 560);
+            this.panelRight.Size = new System.Drawing.Size(485, 560);
             this.panelRight.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelRight.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelRight.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -625,7 +636,7 @@
             this.btnAdd新增.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnAdd新增.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd新增.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAdd新增.Location = new System.Drawing.Point(279, 10);
+            this.btnAdd新增.Location = new System.Drawing.Point(236, 10);
             this.btnAdd新增.Name = "btnAdd新增";
             this.btnAdd新增.Size = new System.Drawing.Size(75, 23);
             this.btnAdd新增.TabIndex = 16;
@@ -637,7 +648,7 @@
             this.btnEdit修改.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnEdit修改.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEdit修改.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnEdit修改.Location = new System.Drawing.Point(360, 10);
+            this.btnEdit修改.Location = new System.Drawing.Point(317, 10);
             this.btnEdit修改.Name = "btnEdit修改";
             this.btnEdit修改.Size = new System.Drawing.Size(75, 23);
             this.btnEdit修改.TabIndex = 16;
@@ -649,24 +660,12 @@
             this.btnDel删除.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnDel删除.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDel删除.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnDel删除.Location = new System.Drawing.Point(441, 10);
+            this.btnDel删除.Location = new System.Drawing.Point(398, 10);
             this.btnDel删除.Name = "btnDel删除";
             this.btnDel删除.Size = new System.Drawing.Size(75, 23);
             this.btnDel删除.TabIndex = 5;
             this.btnDel删除.Text = "删 除";
             this.btnDel删除.Click += new System.EventHandler(this.btnDel删除_Click);
-            // 
-            // btnSave保存
-            // 
-            this.btnSave保存.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnSave保存.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave保存.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSave保存.Location = new System.Drawing.Point(15, 311);
-            this.btnSave保存.Name = "btnSave保存";
-            this.btnSave保存.Size = new System.Drawing.Size(75, 23);
-            this.btnSave保存.TabIndex = 38;
-            this.btnSave保存.Text = "保 存";
-            this.btnSave保存.Click += new System.EventHandler(this.btnSave保存_Click);
             // 
             // FrmEmployee
             // 
@@ -723,7 +722,7 @@
         private DevComponents.DotNetBar.LabelX labelX10;
         private DevComponents.DotNetBar.Controls.TextBoxX txtB部门;
         private DevComponents.DotNetBar.Controls.TextBoxX txtR入职日期;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtL离职如期;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtL离职日期;
         private DevComponents.DotNetBar.Controls.TextBoxX txtY员工类型;
         private DevComponents.DotNetBar.Controls.TextBoxX txtZ状态;
         private DevComponents.DotNetBar.ButtonX btnPrt打印;

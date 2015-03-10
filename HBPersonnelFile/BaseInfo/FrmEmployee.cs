@@ -12,6 +12,9 @@ namespace HBPersonnelFile.BaseInfo
 {
     public partial class FrmEmployee :DockContent
     {
+        BindingSource bind = new BindingSource();
+
+
         public FrmEmployee()
         {
             InitializeComponent();
@@ -26,7 +29,9 @@ namespace HBPersonnelFile.BaseInfo
         {
             //Dgv读取数据
             string sql = "SELECT * FROM Tyg员工";
-            dgv.DataSource = FrmMain.jxcClient.GetTable(sql,1);
+            DataTable dt = FrmMain.jxcClient.GetTable(sql,1);
+            bind.DataSource = dt;
+            dgv.DataSource = bind;
             WinUI.SetRowNum(dgv);
             WinUI.FormatGrid(dgv);
 
@@ -44,6 +49,8 @@ namespace HBPersonnelFile.BaseInfo
             //初始化右侧资料区
             DisabledTabPage();
 
+            //设置绑定
+            SetBinding();
         }
 
         private void btnSrh查询_Click(object sender, EventArgs e)
@@ -59,7 +66,28 @@ namespace HBPersonnelFile.BaseInfo
         {
             if (dgv.Rows.Count < 1)
                 return;
+
             DisabledTabPage();
+        }
+
+        private void SetBinding()
+        {
+            txtX姓名.DataBindings.Add(new Binding("Text", bind, "X姓名", true));
+            txtX性别.DataBindings.Add(new Binding("Text", bind, "X性别", true));
+            txtB部门.DataBindings.Add(new Binding("Text", bind, "B部门", true));
+            txtC出生年份.DataBindings.Add(new Binding("Text", bind, "C出生年份", true));
+            txtC出生月份.DataBindings.Add(new Binding("Text", bind, "C出生月份", true));
+            txtD电话.DataBindings.Add(new Binding("Text", bind, "D电话", true));
+            txtG工会费.DataBindings.Add(new Binding("Text", bind, "G工会费", true));
+            txtG公积金.DataBindings.Add(new Binding("Text", bind, "G公积金", true));
+            txtL离职日期.DataBindings.Add(new Binding("Text", bind, "L离职如期", true));
+            txtN年假.DataBindings.Add(new Binding("Text", bind, "N年假", true));
+            txtR入职日期.DataBindings.Add(new Binding("Text", bind, "R入职日期", true));
+            txtS社保.DataBindings.Add(new Binding("Text", bind, "S社保", true));
+            txtS剩余年假.DataBindings.Add(new Binding("Text", bind, "S剩余年假", true));
+            txtT特困基金.DataBindings.Add(new Binding("Text", bind, "T特困基金", true));
+            txtY员工类型.DataBindings.Add(new Binding("Text", bind, "Y员工类型", true));
+            txtZ状态.DataBindings.Add(new Binding("Text", bind, "Z状态", true));
         }
 
         private void txtSrh查询_KeyPress(object sender, KeyPressEventArgs e)
