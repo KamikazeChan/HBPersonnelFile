@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.panelTop = new DevComponents.DotNetBar.PanelEx();
             this.cbSrh查询 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -42,13 +42,15 @@
             this.txtX性别 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tabControl = new DevComponents.DotNetBar.TabControl();
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
-            this.btnSave保存 = new DevComponents.DotNetBar.ButtonX();
-            this.labelX11 = new DevComponents.DotNetBar.LabelX();
-            this.labelX12 = new DevComponents.DotNetBar.LabelX();
-            this.labelX13 = new DevComponents.DotNetBar.LabelX();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.txtN年假 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtT特困基金 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.btnKJNJ扣减年假 = new DevComponents.DotNetBar.ButtonX();
             this.txtS剩余年假 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX13 = new DevComponents.DotNetBar.LabelX();
+            this.labelX11 = new DevComponents.DotNetBar.LabelX();
+            this.btnSave保存 = new DevComponents.DotNetBar.ButtonX();
+            this.labelX12 = new DevComponents.DotNetBar.LabelX();
+            this.txtT特困基金 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX14 = new DevComponents.DotNetBar.LabelX();
             this.labelX15 = new DevComponents.DotNetBar.LabelX();
             this.labelX16 = new DevComponents.DotNetBar.LabelX();
@@ -78,15 +80,18 @@
             this.btnAdd新增 = new DevComponents.DotNetBar.ButtonX();
             this.btnEdit修改 = new DevComponents.DotNetBar.ButtonX();
             this.btnDel删除 = new DevComponents.DotNetBar.ButtonX();
-            this.btnKJNJ扣减年假 = new DevComponents.DotNetBar.ButtonX();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.labStaus = new DevComponents.DotNetBar.LabelX();
+            this.txtP排序 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX17 = new DevComponents.DotNetBar.LabelX();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.labB保存 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tabControlPanel1.SuspendLayout();
-            this.panelRight.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panelRight.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv
@@ -97,14 +102,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv.Location = new System.Drawing.Point(0, 35);
             this.dgv.Name = "dgv";
@@ -250,6 +255,10 @@
             // 
             // tabControlPanel1
             // 
+            this.tabControlPanel1.Controls.Add(this.labB保存);
+            this.tabControlPanel1.Controls.Add(this.labelX17);
+            this.tabControlPanel1.Controls.Add(this.txtP排序);
+            this.tabControlPanel1.Controls.Add(this.labStaus);
             this.tabControlPanel1.Controls.Add(this.panel1);
             this.tabControlPanel1.Controls.Add(this.btnSave保存);
             this.tabControlPanel1.Controls.Add(this.labelX12);
@@ -295,43 +304,18 @@
             this.tabControlPanel1.TabIndex = 1;
             this.tabControlPanel1.TabItem = this.tabItem1;
             // 
-            // btnSave保存
+            // panel1
             // 
-            this.btnSave保存.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnSave保存.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSave保存.Location = new System.Drawing.Point(15, 309);
-            this.btnSave保存.Name = "btnSave保存";
-            this.btnSave保存.Size = new System.Drawing.Size(75, 23);
-            this.btnSave保存.TabIndex = 38;
-            this.btnSave保存.Text = "保 存";
-            this.btnSave保存.Click += new System.EventHandler(this.btnSave保存_Click);
-            // 
-            // labelX11
-            // 
-            this.labelX11.BackColor = System.Drawing.Color.Transparent;
-            this.labelX11.Location = new System.Drawing.Point(2, 1);
-            this.labelX11.Name = "labelX11";
-            this.labelX11.Size = new System.Drawing.Size(54, 23);
-            this.labelX11.TabIndex = 37;
-            this.labelX11.Text = "年假";
-            // 
-            // labelX12
-            // 
-            this.labelX12.BackColor = System.Drawing.Color.Transparent;
-            this.labelX12.Location = new System.Drawing.Point(179, 198);
-            this.labelX12.Name = "labelX12";
-            this.labelX12.Size = new System.Drawing.Size(54, 23);
-            this.labelX12.TabIndex = 36;
-            this.labelX12.Text = "特困基金";
-            // 
-            // labelX13
-            // 
-            this.labelX13.BackColor = System.Drawing.Color.Transparent;
-            this.labelX13.Location = new System.Drawing.Point(2, 28);
-            this.labelX13.Name = "labelX13";
-            this.labelX13.Size = new System.Drawing.Size(54, 23);
-            this.labelX13.TabIndex = 35;
-            this.labelX13.Text = "剩余年假";
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.txtN年假);
+            this.panel1.Controls.Add(this.btnKJNJ扣减年假);
+            this.panel1.Controls.Add(this.txtS剩余年假);
+            this.panel1.Controls.Add(this.labelX13);
+            this.panel1.Controls.Add(this.labelX11);
+            this.panel1.Location = new System.Drawing.Point(179, 225);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(225, 65);
+            this.panel1.TabIndex = 39;
             // 
             // txtN年假
             // 
@@ -345,16 +329,17 @@
             this.txtN年假.Size = new System.Drawing.Size(84, 21);
             this.txtN年假.TabIndex = 34;
             // 
-            // txtT特困基金
+            // btnKJNJ扣减年假
             // 
-            // 
-            // 
-            // 
-            this.txtT特困基金.Border.Class = "TextBoxBorder";
-            this.txtT特困基金.Location = new System.Drawing.Point(239, 202);
-            this.txtT特困基金.Name = "txtT特困基金";
-            this.txtT特困基金.Size = new System.Drawing.Size(84, 21);
-            this.txtT特困基金.TabIndex = 33;
+            this.btnKJNJ扣减年假.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnKJNJ扣减年假.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnKJNJ扣减年假.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnKJNJ扣减年假.Location = new System.Drawing.Point(149, 30);
+            this.btnKJNJ扣减年假.Name = "btnKJNJ扣减年假";
+            this.btnKJNJ扣减年假.Size = new System.Drawing.Size(75, 23);
+            this.btnKJNJ扣减年假.TabIndex = 18;
+            this.btnKJNJ扣减年假.Text = "扣减年假";
+            this.btnKJNJ扣减年假.Click += new System.EventHandler(this.btnKJNJ扣减年假_Click);
             // 
             // txtS剩余年假
             // 
@@ -367,6 +352,55 @@
             this.txtS剩余年假.ReadOnly = true;
             this.txtS剩余年假.Size = new System.Drawing.Size(84, 21);
             this.txtS剩余年假.TabIndex = 32;
+            // 
+            // labelX13
+            // 
+            this.labelX13.BackColor = System.Drawing.Color.Transparent;
+            this.labelX13.Location = new System.Drawing.Point(2, 28);
+            this.labelX13.Name = "labelX13";
+            this.labelX13.Size = new System.Drawing.Size(54, 23);
+            this.labelX13.TabIndex = 35;
+            this.labelX13.Text = "剩余年假";
+            // 
+            // labelX11
+            // 
+            this.labelX11.BackColor = System.Drawing.Color.Transparent;
+            this.labelX11.Location = new System.Drawing.Point(2, 1);
+            this.labelX11.Name = "labelX11";
+            this.labelX11.Size = new System.Drawing.Size(54, 23);
+            this.labelX11.TabIndex = 37;
+            this.labelX11.Text = "年假";
+            // 
+            // btnSave保存
+            // 
+            this.btnSave保存.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnSave保存.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnSave保存.Location = new System.Drawing.Point(15, 309);
+            this.btnSave保存.Name = "btnSave保存";
+            this.btnSave保存.Size = new System.Drawing.Size(75, 23);
+            this.btnSave保存.TabIndex = 38;
+            this.btnSave保存.Text = "保 存";
+            this.btnSave保存.Click += new System.EventHandler(this.btnSave保存_Click);
+            // 
+            // labelX12
+            // 
+            this.labelX12.BackColor = System.Drawing.Color.Transparent;
+            this.labelX12.Location = new System.Drawing.Point(179, 198);
+            this.labelX12.Name = "labelX12";
+            this.labelX12.Size = new System.Drawing.Size(54, 23);
+            this.labelX12.TabIndex = 36;
+            this.labelX12.Text = "特困基金";
+            // 
+            // txtT特困基金
+            // 
+            // 
+            // 
+            // 
+            this.txtT特困基金.Border.Class = "TextBoxBorder";
+            this.txtT特困基金.Location = new System.Drawing.Point(239, 202);
+            this.txtT特困基金.Name = "txtT特困基金";
+            this.txtT特困基金.Size = new System.Drawing.Size(84, 21);
+            this.txtT特困基金.TabIndex = 33;
             // 
             // labelX14
             // 
@@ -669,30 +703,50 @@
             this.btnDel删除.Text = "删 除";
             this.btnDel删除.Click += new System.EventHandler(this.btnDel删除_Click);
             // 
-            // btnKJNJ扣减年假
+            // labStaus
             // 
-            this.btnKJNJ扣减年假.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnKJNJ扣减年假.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKJNJ扣减年假.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnKJNJ扣减年假.Location = new System.Drawing.Point(149, 30);
-            this.btnKJNJ扣减年假.Name = "btnKJNJ扣减年假";
-            this.btnKJNJ扣减年假.Size = new System.Drawing.Size(75, 23);
-            this.btnKJNJ扣减年假.TabIndex = 18;
-            this.btnKJNJ扣减年假.Text = "扣减年假";
-            this.btnKJNJ扣减年假.Click += new System.EventHandler(this.btnKJNJ扣减年假_Click);
+            this.labStaus.BackColor = System.Drawing.Color.Transparent;
+            this.labStaus.Font = new System.Drawing.Font("宋体", 10F);
+            this.labStaus.Location = new System.Drawing.Point(15, 424);
+            this.labStaus.Name = "labStaus";
+            this.labStaus.Size = new System.Drawing.Size(75, 23);
+            this.labStaus.TabIndex = 40;
+            this.labStaus.Text = "状态:";
             // 
-            // panel1
+            // txtP排序
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.txtN年假);
-            this.panel1.Controls.Add(this.btnKJNJ扣减年假);
-            this.panel1.Controls.Add(this.txtS剩余年假);
-            this.panel1.Controls.Add(this.labelX13);
-            this.panel1.Controls.Add(this.labelX11);
-            this.panel1.Location = new System.Drawing.Point(179, 225);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(225, 65);
-            this.panel1.TabIndex = 39;
+            // 
+            // 
+            // 
+            this.txtP排序.Border.Class = "TextBoxBorder";
+            this.txtP排序.Location = new System.Drawing.Point(75, 158);
+            this.txtP排序.Name = "txtP排序";
+            this.txtP排序.Size = new System.Drawing.Size(84, 21);
+            this.txtP排序.TabIndex = 41;
+            // 
+            // labelX17
+            // 
+            this.labelX17.BackColor = System.Drawing.Color.Transparent;
+            this.labelX17.Location = new System.Drawing.Point(15, 158);
+            this.labelX17.Name = "labelX17";
+            this.labelX17.Size = new System.Drawing.Size(54, 23);
+            this.labelX17.TabIndex = 42;
+            this.labelX17.Text = "排序";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 3000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // labB保存
+            // 
+            this.labB保存.AutoSize = true;
+            this.labB保存.Location = new System.Drawing.Point(396, 431);
+            this.labB保存.Name = "labB保存";
+            this.labB保存.Size = new System.Drawing.Size(53, 12);
+            this.labB保存.TabIndex = 43;
+            this.labB保存.Text = "保存成功";
+            this.labB保存.Visible = false;
             // 
             // FrmEmployee
             // 
@@ -711,8 +765,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabControl)).EndInit();
             this.tabControl.ResumeLayout(false);
             this.tabControlPanel1.ResumeLayout(false);
-            this.panelRight.ResumeLayout(false);
+            this.tabControlPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panelRight.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -769,6 +824,11 @@
         private DevComponents.DotNetBar.ButtonX btnSave保存;
         private DevComponents.DotNetBar.ButtonX btnKJNJ扣减年假;
         private System.Windows.Forms.Panel panel1;
+        private DevComponents.DotNetBar.LabelX labStaus;
+        private DevComponents.DotNetBar.LabelX labelX17;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtP排序;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label labB保存;
 
     }
 }

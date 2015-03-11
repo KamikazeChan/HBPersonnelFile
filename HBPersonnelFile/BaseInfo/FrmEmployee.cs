@@ -14,7 +14,7 @@ namespace HBPersonnelFile.BaseInfo
     public partial class FrmEmployee :DockContent
     {
         BindingSource bind = new BindingSource();
-        bool bindOnce = true;
+        bool boolOnce = true;
 
         public FrmEmployee()
         {
@@ -29,7 +29,7 @@ namespace HBPersonnelFile.BaseInfo
         private void FrmEmployee_Load(object sender, EventArgs e)
         {
             //Dgv读取数据
-            LoadData();
+            LoadData("");
 
             //设置CombBox
             DataTable dtComboBox = new DataTable();
@@ -48,19 +48,26 @@ namespace HBPersonnelFile.BaseInfo
             //设置绑定
             SetBinding();
             bind.CurrentChanged += bind_CurrentChanged;//增加一个当前行变化的事件
-        }
+        }   
 
         void bind_CurrentChanged(object sender, EventArgs e)
         {
-            //throw new NotImplementedException();
+            if (dgv.Rows.Count < 1)
+                return;
+
+            if(dgv.SelectedRows.Count>0&&dgv.SelectedRows[0].Cells["ID"].Value!=null)
+                txtX姓名.Tag = dgv.SelectedRows[0].Cells["ID"].Value.ToString();
+
         }
 
-        private void LoadData()
+        private void LoadData(string strWhere)
         {
-            string sql = "SELECT * FROM Tyg员工";
-            DataTable dt = FrmMain.jxcClient.GetTable(sql, 1);
+            string sql = "SELECT * FROM Tyg员工 "+strWhere;
+            DataTable dt = FrmMain.jxcClient.GetTable(sql, User.UserID);
             bind.DataSource = dt;
             dgv.DataSource = bind;
+            //boolOnce = true;
+            //SetBinding();
             WinUI.SetRowNum(dgv);
             WinUI.FormatGrid(dgv);
         }
@@ -68,25 +75,31 @@ namespace HBPersonnelFile.BaseInfo
         private void btnSrh查询_Click(object sender, EventArgs e)
         {
             if (txtSrh查询.Text.Trim() == "")
-                LoadData();
+            {
+                LoadData("");
+            }
+            else
+            {
+                string strWhere = string.Format("where {0} like '%{1}%'",cbSrh查询.SelectedValue.ToString(),txtSrh查询.Text.Trim());
+                LoadData(strWhere);
+            }
 
-            string sql = string.Format("SELECT * FROM Tyg员工 WHERE {0} like '%{1}%'",cbSrh查询.SelectedValue.ToString(),txtSrh查询.Text.Trim());
-            dgv.DataSource = FrmMain.jxcClient.GetTable(sql, 1);
+            dgv.Enabled = true;
+            btnAdd新增.Enabled = true;
+            btnEdit修改.Enabled = true;
+            btnDel删除.Enabled = true;
+            DisabledTabPage();
+            labStaus.Text = "状态:";
         }
 
         private void dgv_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgv.Rows.Count < 1)
-                return;
-            DisabledTabPage();
-
-            if(dgv.SelectedRows.Count>0)
-                txtX姓名.Tag = dgv.SelectedRows[0].Cells["ID"].Value.ToString();
+            
         }
 
         private void SetBinding()
         {
-            if (!bindOnce)
+            if (!boolOnce)
                 return;
 
             txtX姓名.DataBindings.Add(new Binding("Text", bind, "X姓名", true));
@@ -105,8 +118,10 @@ namespace HBPersonnelFile.BaseInfo
             txtT特困基金.DataBindings.Add(new Binding("Text", bind, "T特困基金", true));
             txtY员工类型.DataBindings.Add(new Binding("Text", bind, "Y员工类型", true));
             txtZ状态.DataBindings.Add(new Binding("Text", bind, "Z状态", true));
+            txtP排序.DataBindings.Add(new Binding("Text", bind, "P排序", true));
+            txtX姓名.Tag = dgv.SelectedRows[0].Cells["ID"].Value.ToString();
 
-            bindOnce = false;
+            boolOnce = false;
         }
 
         private void txtSrh查询_KeyPress(object sender, KeyPressEventArgs e)
@@ -117,23 +132,32 @@ namespace HBPersonnelFile.BaseInfo
 
         private void btnAdd新增_Click(object sender, EventArgs e)
         {
-            EnabledTabPage();
+            if (labStaus.Text != "状态:新增")
+            {
+                EnabledTabPage();
+                bind.AddNew();
 
-            //初始化右侧资料区
-            //foreach (Control c in tabControlPanel1.Controls)
-            //{
-            //    if (c is TextBox)
-            //        c.Text = "";
-            //    if (c is RichTextBox)
-            //        c.Text = "";
-            //}
+                //dgv选中行移到最后一行
+                int rows = dgv.Rows.Count;
+                dgv.Rows[dgv.SelectedRows[0].Index].Selected = false;
+                dgv.Rows[rows - 1].Selected = true;
 
-
-            txtX姓名.Tag = 0;
-            bind.AddNew();
-            int rows = dgv.Rows.Count;
-            dgv.Rows[dgv.SelectedRows[0].Index].Selected = false;
-            dgv.Rows[rows - 1].Selected = true;
+                //设置其他控件状态
+                labStaus.Text = "状态:新增";
+                txtX姓名.Tag = 0;
+                dgv.Enabled = false;
+                btnEdit修改.Enabled = false;
+                btnDel删除.Enabled = false;
+            }
+            else
+            {
+                DisabledTabPage();
+                bind.RemoveCurrent();
+                labStaus.Text = "状态:";
+                dgv.Enabled = true;
+                btnEdit修改.Enabled = true;
+                btnDel删除.Enabled = true;
+            }
         }
 
         //允许编辑右侧资料区
@@ -157,21 +181,77 @@ namespace HBPersonnelFile.BaseInfo
 
             //设置右侧是否可以编辑
             if (!tabControlPanel1.Enabled)
+            {
+                labStaus.Text = "状态:编辑";
                 EnabledTabPage();
+                btnAdd新增.Enabled = false;
+                btnDel删除.Enabled = false;
+                dgv.Enabled = false;
+            }
             else
+            {
                 DisabledTabPage();
+                labStaus.Text = "状态:";
+                btnAdd新增.Enabled = true;
+                btnDel删除.Enabled = true;
+                dgv.Enabled = true;
+            }
         }
 
         private void btnDel删除_Click(object sender, EventArgs e)
         {
             if (dgv.Rows.Count < 1)
                 return;
+            if (MessageBox.Show("是否删除该员工资料?", "提示", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
 
+            string sql = string.Format("delete Tyg员工 WHERE ID={0}",txtX姓名.Tag.ToString());
+            int reNum = FrmMain.jxcClient.ExecSQL(sql,User.UserID);
+            LoadData("");
         }
 
         private void btnSave保存_Click(object sender, EventArgs e)
         {
-            
+            string sql = string.Empty;
+            if (labStaus.Text == "状态:新增")
+            {
+                sql = string.Format("INSERT INTO Tyg员工 (X姓名, X性别, Y员工类型, Z状态, B部门, D电话, R入职日期, L离职日期, "+
+                                    "C出生年份, C出生月份, N年假, S剩余年假, S社保, G公积金, G工会费, T特困基金, P排序) VALUES "+
+                                    "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}')",
+                                    txtX姓名.Text.Trim(), txtX性别.Text, txtY员工类型.Text, txtZ状态.Text, txtB部门.Text, txtD电话.Text, txtR入职日期.Text,
+                                    txtL离职日期.Text, txtC出生年份.Text, txtC出生月份.Text, txtN年假.Text, txtS剩余年假.Text, txtS社保.Text,
+                                    txtG公积金.Text, txtG工会费.Text, txtT特困基金.Text, txtP排序.Text );
+            }
+            else
+            {
+                sql = string.Format("UPDATE Tyg员工 SET "+
+                                    "X姓名 ='{0}', X性别 ='{1}', Y员工类型 ='{2}', Z状态 ='{3}', B部门 ='{4}', D电话 ='{5}', "+
+                                    "R入职日期 ='{6}', L离职日期 ='{7}', C出生年份 ='{8}', C出生月份 ='{9}', N年假 ='{10}', "+
+                                    "S剩余年假 ='{11}', S社保 ='{12}', G公积金 ='{13}', G工会费 ='{14}', T特困基金 ='{15}', P排序 ='{16}' "+
+                                    "WHERE ID='{17}'", txtX姓名.Text.Trim(), txtX性别.Text, txtY员工类型.Text, txtZ状态.Text, txtB部门.Text, txtD电话.Text, 
+                                    txtR入职日期.Text, txtL离职日期.Text, txtC出生年份.Text, txtC出生月份.Text, txtN年假.Text, txtS剩余年假.Text, txtS社保.Text,
+                                    txtG公积金.Text, txtG工会费.Text, txtT特困基金.Text, txtP排序.Text,txtX姓名.Tag.ToString());
+            }
+            int reNum = FrmMain.jxcClient.ExecSQL(sql, User.UserID);
+            if (reNum == 1)
+            {
+                labB保存.Text = "保存成功";
+                labB保存.Visible = true;
+
+                dgv.Enabled = true;
+                DisabledTabPage();
+                btnAdd新增.Enabled = true;
+                btnDel删除.Enabled = true;
+                btnEdit修改.Enabled = true;
+                labStaus.Text = "状态:";
+            }
+            else
+            {
+                labB保存.Text = "保存失败";
+                labB保存.Visible = true;
+                labB保存.ForeColor = Color.Red;
+            }
+            timer1.Enabled = true;
         }
 
         private void btnKJNJ扣减年假_Click(object sender, EventArgs e)
@@ -209,6 +289,12 @@ namespace HBPersonnelFile.BaseInfo
             //log
             var msg = string.Format("{0}的剩余年假由{1}天扣减到{2}天",txtX姓名.Text,leftDay,left);
             SysLoger.Info(msg);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            labB保存.Visible = false;
+            timer1.Enabled = false;
         }
 
     }
