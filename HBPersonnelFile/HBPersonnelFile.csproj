@@ -40,6 +40,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\JXCClient\JXCClient\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -98,6 +99,7 @@
       <DependentUpon>FrmResetPwd.cs</DependentUpon>
     </Compile>
     <Compile Include="SYS\HBServer.cs" />
+    <Compile Include="SYS\SysLoger.cs" />
     <Compile Include="SYS\User.cs" />
     <Compile Include="SYS\WinUI.cs" />
     <EmbeddedResource Include="BaseInfo\FrmEmployee.resx">

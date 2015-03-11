@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace HBPersonnelFile.BaseInfo
@@ -171,6 +172,43 @@ namespace HBPersonnelFile.BaseInfo
         private void btnSave保存_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnKJNJ扣减年假_Click(object sender, EventArgs e)
+        {
+            var str=txtS剩余年假.Text;
+            if(str=="")
+            {
+                MessageBox.Show("未设置年假, 不能扣减", "错误");
+                return;
+            }
+            var leftDay = float.Parse(str);//剩余年假天数
+            if(leftDay==0)
+            {
+                MessageBox.Show("没有年假可以扣了.", "错误");
+                return;
+            }
+
+           string input = Interaction.InputBox("请输入扣减天数, 不能大于剩余年假", "年假扣减", "", 300, 300);
+           float uinput = 0;//用户输入的扣减天数
+           float.TryParse(input, out uinput);
+            if(uinput==0)
+            {
+                MessageBox.Show("输入不正确.","错误");
+                return;
+            }
+            if(uinput>leftDay)
+            {
+                MessageBox.Show("输入扣减年假不能大于剩余年假.", "错误");
+                return;
+            }
+
+            var left = leftDay - uinput;//最后剩余年假
+            txtS剩余年假.Text = left.ToString();
+            //Save
+            //log
+            var msg = string.Format("{0}的剩余年假由{1}天扣减到{2}天",txtX姓名.Text,leftDay,left);
+            SysLoger.Info(msg);
         }
 
     }

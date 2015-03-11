@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.panelTop = new DevComponents.DotNetBar.PanelEx();
             this.cbSrh查询 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -78,12 +78,15 @@
             this.btnAdd新增 = new DevComponents.DotNetBar.ButtonX();
             this.btnEdit修改 = new DevComponents.DotNetBar.ButtonX();
             this.btnDel删除 = new DevComponents.DotNetBar.ButtonX();
+            this.btnKJNJ扣减年假 = new DevComponents.DotNetBar.ButtonX();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tabControlPanel1.SuspendLayout();
             this.panelRight.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv
@@ -94,14 +97,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv.Location = new System.Drawing.Point(0, 35);
             this.dgv.Name = "dgv";
@@ -247,13 +250,10 @@
             // 
             // tabControlPanel1
             // 
+            this.tabControlPanel1.Controls.Add(this.panel1);
             this.tabControlPanel1.Controls.Add(this.btnSave保存);
-            this.tabControlPanel1.Controls.Add(this.labelX11);
             this.tabControlPanel1.Controls.Add(this.labelX12);
-            this.tabControlPanel1.Controls.Add(this.labelX13);
-            this.tabControlPanel1.Controls.Add(this.txtN年假);
             this.tabControlPanel1.Controls.Add(this.txtT特困基金);
-            this.tabControlPanel1.Controls.Add(this.txtS剩余年假);
             this.tabControlPanel1.Controls.Add(this.labelX14);
             this.tabControlPanel1.Controls.Add(this.labelX15);
             this.tabControlPanel1.Controls.Add(this.labelX16);
@@ -309,7 +309,7 @@
             // labelX11
             // 
             this.labelX11.BackColor = System.Drawing.Color.Transparent;
-            this.labelX11.Location = new System.Drawing.Point(179, 225);
+            this.labelX11.Location = new System.Drawing.Point(2, 1);
             this.labelX11.Name = "labelX11";
             this.labelX11.Size = new System.Drawing.Size(54, 23);
             this.labelX11.TabIndex = 37;
@@ -327,7 +327,7 @@
             // labelX13
             // 
             this.labelX13.BackColor = System.Drawing.Color.Transparent;
-            this.labelX13.Location = new System.Drawing.Point(179, 252);
+            this.labelX13.Location = new System.Drawing.Point(2, 28);
             this.labelX13.Name = "labelX13";
             this.labelX13.Size = new System.Drawing.Size(54, 23);
             this.labelX13.TabIndex = 35;
@@ -339,8 +339,9 @@
             // 
             // 
             this.txtN年假.Border.Class = "TextBoxBorder";
-            this.txtN年假.Location = new System.Drawing.Point(239, 229);
+            this.txtN年假.Location = new System.Drawing.Point(62, 5);
             this.txtN年假.Name = "txtN年假";
+            this.txtN年假.ReadOnly = true;
             this.txtN年假.Size = new System.Drawing.Size(84, 21);
             this.txtN年假.TabIndex = 34;
             // 
@@ -361,8 +362,9 @@
             // 
             // 
             this.txtS剩余年假.Border.Class = "TextBoxBorder";
-            this.txtS剩余年假.Location = new System.Drawing.Point(239, 256);
+            this.txtS剩余年假.Location = new System.Drawing.Point(62, 32);
             this.txtS剩余年假.Name = "txtS剩余年假";
+            this.txtS剩余年假.ReadOnly = true;
             this.txtS剩余年假.Size = new System.Drawing.Size(84, 21);
             this.txtS剩余年假.TabIndex = 32;
             // 
@@ -667,6 +669,31 @@
             this.btnDel删除.Text = "删 除";
             this.btnDel删除.Click += new System.EventHandler(this.btnDel删除_Click);
             // 
+            // btnKJNJ扣减年假
+            // 
+            this.btnKJNJ扣减年假.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnKJNJ扣减年假.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnKJNJ扣减年假.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnKJNJ扣减年假.Location = new System.Drawing.Point(149, 30);
+            this.btnKJNJ扣减年假.Name = "btnKJNJ扣减年假";
+            this.btnKJNJ扣减年假.Size = new System.Drawing.Size(75, 23);
+            this.btnKJNJ扣减年假.TabIndex = 18;
+            this.btnKJNJ扣减年假.Text = "扣减年假";
+            this.btnKJNJ扣减年假.Click += new System.EventHandler(this.btnKJNJ扣减年假_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.txtN年假);
+            this.panel1.Controls.Add(this.btnKJNJ扣减年假);
+            this.panel1.Controls.Add(this.txtS剩余年假);
+            this.panel1.Controls.Add(this.labelX13);
+            this.panel1.Controls.Add(this.labelX11);
+            this.panel1.Location = new System.Drawing.Point(179, 225);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(225, 65);
+            this.panel1.TabIndex = 39;
+            // 
             // FrmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -685,6 +712,7 @@
             this.tabControl.ResumeLayout(false);
             this.tabControlPanel1.ResumeLayout(false);
             this.panelRight.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -739,6 +767,8 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtS社保;
         private DevComponents.DotNetBar.Controls.TextBoxX txtG工会费;
         private DevComponents.DotNetBar.ButtonX btnSave保存;
+        private DevComponents.DotNetBar.ButtonX btnKJNJ扣减年假;
+        private System.Windows.Forms.Panel panel1;
 
     }
 }
