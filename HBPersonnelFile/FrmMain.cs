@@ -52,6 +52,7 @@ namespace HBPersonnelFile
 
             //登陆界面
             /*预留*/
+            this.WindowState = FormWindowState.Maximized;
 
             menu_Main.Visible = false;
 

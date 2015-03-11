@@ -46,6 +46,12 @@ namespace HBPersonnelFile.BaseInfo
 
             //设置绑定
             SetBinding();
+            bind.CurrentChanged += bind_CurrentChanged;//增加一个当前行变化的事件
+        }
+
+        void bind_CurrentChanged(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
         }
 
         private void LoadData()
