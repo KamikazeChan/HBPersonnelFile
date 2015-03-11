@@ -73,7 +73,8 @@ namespace HBPersonnelFile.BaseInfo
                 return;
             DisabledTabPage();
 
-            txtX姓名.Tag = dgv.SelectedRows[0].Cells["ID"].Value.ToString();
+            if(dgv.SelectedRows.Count>0)
+                txtX姓名.Tag = dgv.SelectedRows[0].Cells["ID"].Value.ToString();
         }
 
         private void SetBinding()
@@ -112,17 +113,17 @@ namespace HBPersonnelFile.BaseInfo
             EnabledTabPage();
 
             //初始化右侧资料区
-            foreach (Control c in tabControlPanel1.Controls)
-            {
-                if (c is TextBox)
-                    c.Text = "";
-                if (c is RichTextBox)
-                    c.Text = "";
-            }
+            //foreach (Control c in tabControlPanel1.Controls)
+            //{
+            //    if (c is TextBox)
+            //        c.Text = "";
+            //    if (c is RichTextBox)
+            //        c.Text = "";
+            //}
 
 
             txtX姓名.Tag = 0;
-            dgv.Rows.Add();
+            bind.AddNew();
             int rows = dgv.Rows.Count;
             dgv.Rows[dgv.SelectedRows[0].Index].Selected = false;
             dgv.Rows[rows - 1].Selected = true;
