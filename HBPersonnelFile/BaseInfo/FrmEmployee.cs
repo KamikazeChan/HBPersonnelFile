@@ -31,7 +31,7 @@ namespace HBPersonnelFile.BaseInfo
             //Dgv读取数据
             LoadData("");
 
-            //设置CombBox
+            //设置查询CombBox
             DataTable dtComboBox = new DataTable();
             dtComboBox.Columns.Add("Text");
             dtComboBox.Columns.Add("Tag");

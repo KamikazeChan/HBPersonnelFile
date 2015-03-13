@@ -84,7 +84,10 @@
     <Compile Include="FrmMainToolBox.Designer.cs">
       <DependentUpon>FrmMainToolBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\PartialClass.cs" />
     <Compile Include="Models\Tcd菜单.cs" />
+    <Compile Include="Models\TEmployee.cs" />
+    <Compile Include="Models\TUserAuth.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\JXCClient\Reference.cs">
@@ -97,6 +100,12 @@
     </Compile>
     <Compile Include="SYS\FrmResetPwd.Designer.cs">
       <DependentUpon>FrmResetPwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYS\FrmUserAuth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYS\FrmUserAuth.Designer.cs">
+      <DependentUpon>FrmUserAuth.cs</DependentUpon>
     </Compile>
     <Compile Include="SYS\HBServer.cs" />
     <Compile Include="SYS\SysLoger.cs" />
@@ -122,6 +131,9 @@
     </Compile>
     <EmbeddedResource Include="SYS\FrmResetPwd.resx">
       <DependentUpon>FrmResetPwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYS\FrmUserAuth.resx">
+      <DependentUpon>FrmUserAuth.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
