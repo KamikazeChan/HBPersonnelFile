@@ -31,7 +31,7 @@ namespace HBPersonnelFile
            
                 this.Cursor = Cursors.WaitCursor;
              
-                var sql = "select ID, X姓名, Z帐号, B部门 from Tyg员工 where Z帐号='{0}' and M密码='{1}'";
+                var sql =string.Format( "select ID, X姓名, Z帐号, B部门 from Tyg员工 where Z帐号='{0}' and M密码='{1}'",cbName.Text,txtPWD.Text);
                 var dt = RemoteServer.GetTable(sql);
                 if (dt.Rows.Count == 1)
                 {
