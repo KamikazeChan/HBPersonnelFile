@@ -5,19 +5,36 @@ using HBPersonnelFile;
 using System.Text;
 namespace Model
 {
+
+    /// <summary>
+    /// 用户的权限, 采用key-value方式, UserID-MenuIDs, 其中MenuIDs是以逗号分隔菜单ID
+    /// </summary>
     public partial class TUserAuth
     {
-        //public List<TUserAuth> GetEntityByUserID(string MenuIDs)
+        //public List<TUserAuth> GetListByUserID(int userID)
         //{
-        //    var sql = string.Format("select * from  Tcd菜单 where ID IN({0})", MenuIDs);
+        //    var sql = string.Format("select * from  Tqx权限菜单 where UserID={0}", userID);
         //    var dt = RemoteServer.GetTable(sql);
         //    return ConvertToList(dt);
         //}
-        public List<TUserAuth> GetEntityByUserID(int userID)
+
+        /// <summary>
+        /// 返回用户的权限菜单(一般用在登陆时候读取权限)
+        /// </summary>
+        /// <param name="userID">用户ID</param>
+        /// <returns></returns>
+        public TUserAuth GetEntityByUserID(int userID)
         {
             var sql = string.Format("select * from  Tqx权限菜单 where UserID={0}", userID);
             var dt = RemoteServer.GetTable(sql);
-            return ConvertToList(dt);
+            if (dt.Rows.Count < 1)
+            {
+                return null;
+            }
+            else
+            {
+                return ConvertToList(dt)[0];
+            }
         }
 
         /// <summary>

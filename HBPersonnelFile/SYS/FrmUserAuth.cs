@@ -68,8 +68,8 @@ namespace HBPersonnelFile.SYS
             }
             selectedUser = lst[0];
             TUserAuth ua = new TUserAuth();
-            var lstUa = ua.GetEntityByUserID(selectedUser.ID);
-            if(lstUa.Count<1)
+            var uax = ua.GetEntityByUserID(selectedUser.ID);
+            if (uax==null)
             {
                 userAuth = ua;
                 userAuth.ID = 0;
@@ -77,7 +77,7 @@ namespace HBPersonnelFile.SYS
                 userAuth.MenuIDs = "";
             }else
             {
-                userAuth = lstUa[0];
+                userAuth = uax;
             }
 
             lblInfo.Text = selectedUser.X姓名+"权限";

@@ -3,6 +3,9 @@ using System.Data;
 using System.Collections.Generic;
 namespace Model
 {
+    /// <summary>
+    /// 用户的权限, 采用key-value方式, UserID-MenuIDs, 其中MenuIDs是以逗号分隔菜单ID
+    /// </summary>
     public partial class TUserAuth
     {
         public int ID { get; set; }

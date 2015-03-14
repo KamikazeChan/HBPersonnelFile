@@ -17,12 +17,13 @@ namespace HBPersonnelFile
         private FrmMainToolBox FrmToolBox;
         public static JXCClient.JXCServiceClient jxcClient;
         public static DockPanel sDPanel;
+       
 
         public FrmMain()
         {
             InitializeComponent();
             InitSystem();//初始化系统
-            jxcClient = new JXCClient.JXCServiceClient();
+            //jxcClient = new JXCClient.JXCServiceClient();
         }
 
         private void InitSystem()
@@ -45,27 +46,27 @@ namespace HBPersonnelFile
 
         private void InitializeUI()
         {
-            this.Show();
-            this.Activate();
-
-            SetStatusText();//设置状态栏信息
-
+            //this.Show();
+            //this.Activate();
+           // this.Visible = false;
             //登陆界面
             /*预留*/
-            this.WindowState = FormWindowState.Maximized;
+           // this.WindowState = FormWindowState.Maximized;
 
             menu_Main.Visible = false;
 
 #if DEBUG
             menu_Main.Visible = true;
 #endif
-            //if (!Login())
-            //    Application.Exit();
-            ShowToolBox();
+            if (!Login())
+                Application.Exit();
+            SetStatusText();//设置状态栏信息
         }
+
         private bool Login()
         {
             FrmLogin frm = new FrmLogin();
+            frm.CreatMenu = ShowToolBox;
 
             if (frm.ShowDialog() != System.Windows.Forms.DialogResult.OK)
                 return false;
@@ -149,6 +150,11 @@ namespace HBPersonnelFile
                 }
             }
             return false;
+        }
+
+        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Visible = false;
         }
     }
 }

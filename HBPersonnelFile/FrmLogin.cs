@@ -12,6 +12,7 @@ namespace HBPersonnelFile
 {
     public partial class FrmLogin : Form
     {
+        public Action CreatMenu;
         public FrmLogin()
         {
             InitializeComponent();
@@ -19,7 +20,8 @@ namespace HBPersonnelFile
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            this.Text += "(Ver:" + Application.ProductVersion + ")";
+         //tabControlPanel1.ta
+           this.Text += "(Ver:" + Application.ProductVersion + ")";
             // CheckUpdate();//检查更新
             //  btnLogin.PerformClick();
         }
@@ -39,6 +41,8 @@ namespace HBPersonnelFile
                     User.Department = dt.Rows[0]["B部门"].ToString();
 
                     this.Cursor = Cursors.Default;
+                    if (CreatMenu != null)
+                        CreatMenu();
                     this.DialogResult = System.Windows.Forms.DialogResult.OK;
                 }
                 else
@@ -79,7 +83,7 @@ namespace HBPersonnelFile
         private void cbName_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)
-                btnLogin.PerformClick();
+                btnLogin2.PerformClick();
         }
     }
 }

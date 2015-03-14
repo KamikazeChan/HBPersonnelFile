@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.panelTop = new DevComponents.DotNetBar.PanelEx();
             this.cbSrh查询 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -42,6 +42,10 @@
             this.txtX性别 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.tabControl = new DevComponents.DotNetBar.TabControl();
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
+            this.labB保存 = new System.Windows.Forms.Label();
+            this.labelX17 = new DevComponents.DotNetBar.LabelX();
+            this.txtP排序 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labStaus = new DevComponents.DotNetBar.LabelX();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtN年假 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btnKJNJ扣减年假 = new DevComponents.DotNetBar.ButtonX();
@@ -80,11 +84,7 @@
             this.btnAdd新增 = new DevComponents.DotNetBar.ButtonX();
             this.btnEdit修改 = new DevComponents.DotNetBar.ButtonX();
             this.btnDel删除 = new DevComponents.DotNetBar.ButtonX();
-            this.labStaus = new DevComponents.DotNetBar.LabelX();
-            this.txtP排序 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX17 = new DevComponents.DotNetBar.LabelX();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.labB保存 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl)).BeginInit();
@@ -102,14 +102,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgv.Location = new System.Drawing.Point(0, 35);
             this.dgv.Name = "dgv";
@@ -303,6 +303,46 @@
             this.tabControlPanel1.Style.GradientAngle = 90;
             this.tabControlPanel1.TabIndex = 1;
             this.tabControlPanel1.TabItem = this.tabItem1;
+            // 
+            // labB保存
+            // 
+            this.labB保存.AutoSize = true;
+            this.labB保存.Location = new System.Drawing.Point(396, 431);
+            this.labB保存.Name = "labB保存";
+            this.labB保存.Size = new System.Drawing.Size(53, 12);
+            this.labB保存.TabIndex = 43;
+            this.labB保存.Text = "保存成功";
+            this.labB保存.Visible = false;
+            // 
+            // labelX17
+            // 
+            this.labelX17.BackColor = System.Drawing.Color.Transparent;
+            this.labelX17.Location = new System.Drawing.Point(15, 158);
+            this.labelX17.Name = "labelX17";
+            this.labelX17.Size = new System.Drawing.Size(54, 23);
+            this.labelX17.TabIndex = 42;
+            this.labelX17.Text = "排序";
+            // 
+            // txtP排序
+            // 
+            // 
+            // 
+            // 
+            this.txtP排序.Border.Class = "TextBoxBorder";
+            this.txtP排序.Location = new System.Drawing.Point(75, 158);
+            this.txtP排序.Name = "txtP排序";
+            this.txtP排序.Size = new System.Drawing.Size(84, 21);
+            this.txtP排序.TabIndex = 41;
+            // 
+            // labStaus
+            // 
+            this.labStaus.BackColor = System.Drawing.Color.Transparent;
+            this.labStaus.Font = new System.Drawing.Font("宋体", 10F);
+            this.labStaus.Location = new System.Drawing.Point(15, 424);
+            this.labStaus.Name = "labStaus";
+            this.labStaus.Size = new System.Drawing.Size(75, 23);
+            this.labStaus.TabIndex = 40;
+            this.labStaus.Text = "状态:";
             // 
             // panel1
             // 
@@ -703,50 +743,10 @@
             this.btnDel删除.Text = "删 除";
             this.btnDel删除.Click += new System.EventHandler(this.btnDel删除_Click);
             // 
-            // labStaus
-            // 
-            this.labStaus.BackColor = System.Drawing.Color.Transparent;
-            this.labStaus.Font = new System.Drawing.Font("宋体", 10F);
-            this.labStaus.Location = new System.Drawing.Point(15, 424);
-            this.labStaus.Name = "labStaus";
-            this.labStaus.Size = new System.Drawing.Size(75, 23);
-            this.labStaus.TabIndex = 40;
-            this.labStaus.Text = "状态:";
-            // 
-            // txtP排序
-            // 
-            // 
-            // 
-            // 
-            this.txtP排序.Border.Class = "TextBoxBorder";
-            this.txtP排序.Location = new System.Drawing.Point(75, 158);
-            this.txtP排序.Name = "txtP排序";
-            this.txtP排序.Size = new System.Drawing.Size(84, 21);
-            this.txtP排序.TabIndex = 41;
-            // 
-            // labelX17
-            // 
-            this.labelX17.BackColor = System.Drawing.Color.Transparent;
-            this.labelX17.Location = new System.Drawing.Point(15, 158);
-            this.labelX17.Name = "labelX17";
-            this.labelX17.Size = new System.Drawing.Size(54, 23);
-            this.labelX17.TabIndex = 42;
-            this.labelX17.Text = "排序";
-            // 
             // timer1
             // 
             this.timer1.Interval = 3000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // labB保存
-            // 
-            this.labB保存.AutoSize = true;
-            this.labB保存.Location = new System.Drawing.Point(396, 431);
-            this.labB保存.Name = "labB保存";
-            this.labB保存.Size = new System.Drawing.Size(53, 12);
-            this.labB保存.TabIndex = 43;
-            this.labB保存.Text = "保存成功";
-            this.labB保存.Visible = false;
             // 
             // FrmEmployee
             // 

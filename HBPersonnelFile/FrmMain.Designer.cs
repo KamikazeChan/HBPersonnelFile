@@ -49,8 +49,8 @@
             this.Status_lbl_LoginTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.menu_Main = new System.Windows.Forms.MenuStrip();
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dockPanelMain = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.人事资料ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dockPanelMain = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.main_Staus.SuspendLayout();
             this.menu_Main.SuspendLayout();
             this.SuspendLayout();
@@ -102,6 +102,13 @@
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
             this.testToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.testToolStripMenuItem.Text = "Test";
+            // 
+            // 人事资料ToolStripMenuItem
+            // 
+            this.人事资料ToolStripMenuItem.Name = "人事资料ToolStripMenuItem";
+            this.人事资料ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.人事资料ToolStripMenuItem.Text = "人事资料";
+            this.人事资料ToolStripMenuItem.Click += new System.EventHandler(this.人事资料ToolStripMenuItem_Click);
             // 
             // dockPanelMain
             // 
@@ -158,14 +165,7 @@
             this.dockPanelMain.Skin = dockPanelSkin1;
             this.dockPanelMain.TabIndex = 5;
             // 
-            // 人事资料ToolStripMenuItem
-            // 
-            this.人事资料ToolStripMenuItem.Name = "人事资料ToolStripMenuItem";
-            this.人事资料ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.人事资料ToolStripMenuItem.Text = "人事资料";
-            this.人事资料ToolStripMenuItem.Click += new System.EventHandler(this.人事资料ToolStripMenuItem_Click);
-            // 
-            // MainForm
+            // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -175,9 +175,10 @@
             this.Controls.Add(this.main_Staus);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menu_Main;
-            this.Name = "MainForm";
+            this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "管理系统";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.main_Staus.ResumeLayout(false);
             this.main_Staus.PerformLayout();
